@@ -110,9 +110,17 @@
 
 
 
+/* ===== CONTEUDO */
+.content {
+    @apply max-w-screen-xl mx-auto;
+}
+
+
+
 /* ===== HEADER PRINCIPAL */
+
 .main-header {
-    @apply fixed z-30 w-full left-0 top-0 px-3 shadow-lg;
+    @apply bg-white fixed z-30 w-full left-0 top-0 px-3 shadow-lg;
 }
 
 .header-content {
@@ -248,6 +256,165 @@
 .footer-menu a {
     @apply block text-center md:text-left text-lg text-white hover:text-ftem_bl1 w-auto md:w-full transition ease-linear;
 }
+
+
+
+/* ----- SERVIÇOS - grid */
+.servico-item {
+    @apply bg-white rounded-md p-3 flex flex-wrap shadow-md;
+    @apply transition ease-linear hover:shadow-lg
+}
+
+.servico-item figure {
+    @apply bg-ftem_b2 w-16 h-16 overflow-hidden rounded-md;
+}
+
+.servico-item .autor {
+    @apply w-auto pl-3;
+}
+.servico-item .autor h3 {
+    @apply text-xl font-semibold;
+}
+
+.servico-item .info {
+    @apply w-full mt-3 flex gap-4;
+}
+.servico-item .info span {
+    @apply text-sm text-ftem_g2;
+}
+.servico-item .info span i {
+    @apply mr-1;
+}
+
+/* depoimento */
+.depoimento {
+    @apply flex pt-10;
+}
+.depoimento figure {
+    @apply bg-ftem_g2 w-[62px] h-[62px] mr-5 overflow-hidden rounded-full;
+}
+.depoimento div {
+    width: calc(80% - 62px);
+}
+
+
+.home-sobre > div > div {
+    @apply flex flex-wrap;
+}
+.home-sobre .imgs,
+.home-sobre .info {
+    @apply w-full md:w-1/2;
+}
+.home-sobre .imgs {
+    @apply flex;
+}
+.home-sobre img {
+    @apply overflow-hidden rounded-md bg-ftem_b2;
+}
+
+
+
+/* ===== SOBRE - O QUE OFERECEMOS */
+
+.sobre-apres .content > div {
+    @apply flex flex-col-reverse justify-between items-center md:flex-row mb-16 md:mb-0;
+}
+.sobre-apres .content > div:nth-child(even) {
+    @apply mb-10;
+}
+.sobre-apres .content > div:nth-child(odd) {
+    @apply flex-col md:flex-row;
+}
+
+.sobre-apres .img {
+    @apply flex justify-center md:justify-normal w-full md:w-1/2 mb-10 md:mb-0;
+}
+.sobre-apres .content > div:nth-child(odd) .img {
+    @apply justify-center md:justify-end;
+}
+.sobre-apres .img figure {
+    @apply overflow-hidden rounded-lg shadow-md;
+}
+
+.sobre-apres .info {
+    @apply w-full md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-14;
+}
+.sobre-apres .content > div:nth-child(even) .info {
+    @apply pr-0 pl-0 md:pl-14;
+}
+
+
+
+/* BUSCA DE SERVICOS */
+
+.servicos-busca {
+    @apply bg-white mb-10 flex p-4 pl-7 rounded-md shadow-sm;
+}
+.servicos-busca div {
+    @apply flex relative w-[calc(100%-58px)] md:w-[calc(100%-144px)];
+    /* width: calc(100% - 144px);
+    width: calc(100% - 58px); */
+}
+.servicos-busca div i {
+    @apply text-xl text-ftem_b2 absolute z-0 my-4;
+}
+.servicos-busca input {
+    @apply bg-transparent w-full relative z-10 px-9 outline-none;
+}
+
+.servicos-busca .btn-md-blue span {
+    @apply hidden sm:block;
+}
+.servicos-busca .btn-md-blue i {
+    @apply block sm:hidden;
+}
+
+
+/* FILTRO DE SERVICOS */
+
+.filtro-lista {
+    @apply mb-7;
+}
+.filtro-lista label {
+    @apply block py-1;
+}
+.filtro-lista label span {
+    @apply text-base;
+}
+.filtro-lista label input:checked + span {
+    @apply font-semibold;
+}
+
+
+
+/* LISTA DE SERVICOS */
+
+.servicos-item {
+    @apply bg-white p-5 overflow-hidden rounded-md flex flex-wrap shadow-sm;
+    @apply transition ease-linear hover:shadow-lg;
+}
+
+.servicos-img {
+    @apply bg-ftem_b2 w-[120px] h-[120px] overflow-hidden rounded-md;
+}
+
+.servico-title {
+    @apply pl-5;
+}
+
+.servico-tag {
+    @apply w-full pt-5 flex justify-between;
+}
+.servico-tag ul {
+    @apply flex flex-wrap gap-4;
+}
+.servico-tag ul li {
+    @apply text-sm text-gray-300;
+}
+.servico-tag ul:nth-child(1) li {
+    @apply text-ftem_bl1 bg-cyan-100 py-1 px-2 rounded-md;
+}
+
 
 
 

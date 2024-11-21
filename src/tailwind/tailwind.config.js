@@ -33,8 +33,9 @@ module.exports = {
         'ftem_g4': '#303030'
       },
       backgroundImage: {
-        'gradient-lite-blue': 'linear-gradient(90deg, #B6C9E1 0%, #EFF8FD 100%)'
-      }
+        'gradient-lite-blue': 'linear-gradient(90deg, #B6C9E1 0%, #EFF8FD 100%)',
+        none: 'none',
+      },
     }
   },
 
