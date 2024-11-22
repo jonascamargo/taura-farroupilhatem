@@ -294,11 +294,29 @@
 /* ===== MODAL */
 
 .modal-stage {
-    @apply fixed z-50 left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center p-5 justify-center;
+    @apply fixed z-50 left-0 top-0 w-full h-full bg-transparent hidden items-center p-5 justify-center;
+}
+.modal-stage.show {
+    @apply flex;
+}
+
+.modal-stage .curtain {
+    @apply absolute z-0 left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.5)];
 }
 
 .modal {
-    @apply flex flex-wrap overflow-hidden rounded-lg shadow-lg;
+    @apply hidden flex-wrap overflow-hidden rounded-lg shadow-lg relative z-10 -top-10 opacity-0;
+}
+.modal-stage.show .modal.wait {
+    @apply flex;
+}
+/* ----- classe para animar a entrada */
+.modal.show {
+    @apply transition-all ease-in-out duration-300 top-0 opacity-100;
+}
+/* ----- classe para animar a saida */
+.modal.out {
+    @apply transition-all ease-in-out duration-300 top-10 opacity-0;
 }
 
 .modal .side-a {
@@ -395,8 +413,9 @@
     @apply fixed left-0 top-0 z-20 w-full transition ease-linear;
 }
 .main-header {
-    @apply main-header-clean;
+    @apply main-header-clean bg-white;
 }
+
 /* ----- quando rolar a pagina o fundo fica branco e a sombra aparece */
 .scrolled {
     @apply shadow-md bg-white;
@@ -406,22 +425,26 @@
     @apply max-w-screen-xl mx-auto flex flex-wrap items-center justify-between relative;
 }
 
-/* ----- logo do cabeço
-.header-logo {} */
-
 /* ----- menu sandwich icone */
 .header-ico-mob {
-    @apply text-3xl text-ftem_b2;
+    @apply text-3xl text-ftem_b2 cursor-pointer;
+    @apply transition ease-in-out hover:opacity-60;
 }
-.header-ico-mob .open {
+.desk .header-ico-mob,
+.mobile.open .header-ico-mob .open,
+.header-ico-mob .close {
     @apply hidden;
 }
+.mobile.open .header-ico-mob .close {
+    @apply block;
+}
 
+/* ----- formatação do texto dos elementos do menu */
 .menu-item-text {
     @apply text-[13px] font-semibold uppercase
 }
 .menu-item {
-    @apply text-ftem_d3 inline-block px-2 md:px-5;
+    @apply text-ftem_d3 inline-block px-2 md:px-5 cursor-pointer;
 }
 .menu-item span {
     @apply menu-item-text inline-block relative;
@@ -433,13 +456,21 @@
 }
 
 .menu-btn {
-    @apply menu-item-text text-white bg-ftem_b2 px-3 lg:px-5 py-4 rounded-sm;
+    @apply menu-item-text text-white bg-ftem_b2 px-3 lg:px-5 py-4 rounded-sm cursor-pointer;
     @apply transition ease-linear hover:bg-ftem_b1;
 }
 
-
 /* ---------- estilo / MOBILE */
-.main-header-clean.mobile  {
+.main-header.mobile .header-content,
+.main-header-clean.mobile .header-content {
+    @apply p-3;
+}
+
+.main-header.mobile,
+.main-header-clean.mobile.open {
+    @apply bg-white;
+}
+.main-header-clean.mobile {
     @apply px-0;
 }
 
@@ -447,12 +478,12 @@
     @apply ml-3;
 }
 
-.mobile .header-ico-mob {
-    @apply mr-3;
-}
-
 .mobile .header-side {
-    @apply absolute w-full right-0 top-20 bg-white shadow-lg;
+    @apply hidden absolute w-full right-0 top-16 bg-white shadow-lg;
+}
+.mobile.open .header-side,
+.mobile .header-side.show {
+    @apply block;
 }
 
 .mobile .header-main-menu {
@@ -479,10 +510,10 @@
     @apply px-3;
 }
 
-/* ----- menu sandwich icone */
+/* ----- menu sandwich icone
 .desk .header-ico-mob {
     @apply hidden;
-}
+} */
 
 /* ----- menu de navegação */
 .desk .header-side {
@@ -508,25 +539,6 @@
 .desk .header-user {
     @apply flex flex-wrap items-center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -796,6 +808,12 @@
 }
 .contato-box .tab-content {
     @apply p-10;
+}
+.contato-box .tab-content > * {
+    display: block;
+}
+.contato-box .tab-content > *:not(.active) {
+    display: none;
 }
 
 .contato-box .tab-menu {

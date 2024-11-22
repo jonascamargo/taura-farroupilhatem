@@ -901,8 +901,8 @@ video {
   padding-top: 2.5rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .pt-32 {
@@ -2406,23 +2406,65 @@ video {
   left: 0px;
   top: 0px;
   z-index: 50;
-  display: flex;
+  display: none;
   height: 100%;
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: transparent;
   padding: 1.25rem;
 }
 
-.modal {
+.modal-stage.show {
   display: flex;
+}
+
+.modal-stage .curtain {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal {
+  position: relative;
+  top: -2.5rem;
+  z-index: 10;
+  display: none;
   flex-wrap: wrap;
   overflow: hidden;
   border-radius: 0.5rem;
+  opacity: 0;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.modal-stage.show .modal.wait {
+  display: flex;
+}
+
+/* ----- classe para animar a entrada */
+
+.modal.show {
+  top: 0px;
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ----- classe para animar a saida */
+
+.modal.out {
+  top: 2.5rem;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal .side-a {
@@ -2574,6 +2616,8 @@ video {
 }
 
 .main-header {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   position: fixed;
   left: 0px;
   top: 0px;
@@ -2585,6 +2629,15 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-timing-function: linear;
+}
+
+.main-header.mobile .header-content {
+  padding: 0.75rem;
+}
+
+.main-header.mobile.open {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .main-header.mobile {
@@ -2618,21 +2671,36 @@ video {
   justify-content: space-between;
 }
 
-/* ----- logo do cabeço
-.header-logo {} */
-
 /* ----- menu sandwich icone */
 
 .header-ico-mob {
+  cursor: pointer;
   font-size: 1.875rem;
   line-height: 2.25rem;
   --tw-text-opacity: 1;
   color: rgb(16 79 158 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-ico-mob .open {
+.header-ico-mob:hover {
+  opacity: 0.6;
+}
+
+.desk .header-ico-mob,
+.mobile.open .header-ico-mob .open,
+.header-ico-mob .close {
   display: none;
 }
+
+.mobile.open .header-ico-mob .close {
+  display: block;
+}
+
+/* ----- formatação do texto dos elementos do menu */
 
 .menu-item-text {
   font-size: 13px;
@@ -2642,6 +2710,7 @@ video {
 
 .menu-item {
   display: inline-block;
+  cursor: pointer;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   --tw-text-opacity: 1;
@@ -2680,6 +2749,7 @@ video {
 }
 
 .menu-btn {
+  cursor: pointer;
   border-radius: 3px;
   --tw-bg-opacity: 1;
   background-color: rgb(16 79 158 / var(--tw-bg-opacity, 1));
@@ -2717,6 +2787,17 @@ video {
 
 /* ---------- estilo / MOBILE */
 
+.main-header.mobile .header-content,
+.main-header-clean.mobile .header-content {
+  padding: 0.75rem;
+}
+
+.main-header.mobile,
+.main-header-clean.mobile.open {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
 .main-header-clean.mobile {
   padding-left: 0px;
   padding-right: 0px;
@@ -2726,20 +2807,22 @@ video {
   margin-left: 0.75rem;
 }
 
-.mobile .header-ico-mob {
-  margin-right: 0.75rem;
-}
-
 .mobile .header-side {
   position: absolute;
   right: 0px;
-  top: 5rem;
+  top: 4rem;
+  display: none;
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.mobile.open .header-side,
+.mobile .header-side.show {
+  display: block;
 }
 
 .mobile .header-main-menu {
@@ -2785,11 +2868,10 @@ video {
   padding-right: 0.75rem;
 }
 
-/* ----- menu sandwich icone */
-
+/* ----- menu sandwich icone
 .desk .header-ico-mob {
-  display: none;
-}
+    @apply hidden;
+} */
 
 /* ----- menu de navegação */
 
@@ -3475,6 +3557,14 @@ video {
   padding: 2.5rem;
 }
 
+.contato-box .tab-content > * {
+  display: block;
+}
+
+.contato-box .tab-content > *:not(.active) {
+  display: none;
+}
+
 .contato-box .tab-menu {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -3722,6 +3812,10 @@ video {
 
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:pt-20 {
+    padding-top: 5rem;
   }
 }
 

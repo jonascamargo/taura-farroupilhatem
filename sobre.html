@@ -9,6 +9,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JS -->
+    <script src="./assets/js/main-script.js" defer></script>
 </head>
 
 
@@ -39,9 +42,9 @@
                 </nav>
 
                 <div class="header-user">
-                    <a href="#entrar" class="menu-item"><span>Entrar</span></a>
+                    <div class="menu-item teste" data-modal="mdl-login"><span>Entrar</span></div>
 
-                    <a href="#cadastro" class="menu-btn"><span>Cadastre-se</span></a>
+                    <div class="menu-btn" data-modal="mdl-cadastro"><span>Cadastre-se</span></div>
                 </div>
             </div>
 
@@ -300,9 +303,9 @@
                 </div>
     
                 <div class="footer-user-r">
-                    <a href="#entrar" class="btn-lg-white-b"><span>Entrar</span></a>
+                    <a href="#entrar" class="btn-lg-white-b" data-modal="mdl-login"><span>Entrar</span></a>
 
-                    <a href="#cadastro" class="btn-lg-blue"><span>Cadastre-se</span></a>
+                    <a href="#cadastro" class="btn-lg-blue" data-modal="mdl-cadastro"><span>Cadastre-se</span></a>
                 </div>
             </div>
 
@@ -360,8 +363,142 @@
     </footer>
     
 
-    <!-- JS -->
-    <script src="./assets/js/main-script.js"></script>
+    <!-- MODAL -->
+    <div class="modal-stage">
+        <!-- formulario de cadastro -->
+        <div class="modal" id="mdl-cadastro">
+
+            <div class="side-a">
+                <h2 class="title-sm text-white mb-3">Crie sua conta!</h2>
+
+                <p class="text-sm text-white">
+                    Faça login para acessar sua conta e encontrar mais ofertas.
+                </p>
+            </div>
+
+            <div class="side-b">
+                <ul class="login-by">
+                    <li><a href="https://www.linkedin.com" class="linkedin"><i class="fa-brands fa-linkedin"></i> Entrar com LinkedIn</a></li>
+                    <li><a href="https://www.google.com" class="google"><i class="fa-brands fa-google"></i> Entrar com Google</a></li>
+                    <li><a href="https://www.facebook.com" class="facebook"><i class="fa-brands fa-facebook-f"></i> Entrar com Facebook</a></li>
+                </ul>
+
+                <div class="form">
+                    <form action="">
+                        <fieldset>
+                            <label for="cadastro-nome">E-mail</label>
+                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="cadastro-senha">Senha</label>
+                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+
+                            <!-- <span class="input-show-pass">
+                                <i class="fa-regular fa-eye"></i> -->
+                                <!-- <i class="fa-regular fa-eye-slash"></i> -->
+                            <!-- </span> -->
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="cadastro-confirmar">Confirme sua senha</label>
+                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar">
+                        </fieldset>
+                        
+                        
+                        <div class="flex flex-wrap justify-between">
+                            <label for="cadastro-lembrar">
+                                <input type="checkbox" name="cadastro-lembrar" id="cadastro-lembrar">
+                                Lembrar
+                            </label>
+
+                            <button class="link">Esqueci a Senha</button>
+                        </div>
+
+                        <div class="action-box">
+                            <button class="btn-sm-blue">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- formulario de login -->
+        <div class="modal" id="mdl-login">
+
+            <div class="side-a">
+                <h2 class="title-sm text-white mb-3">Bem vindo de voltar!</h2>
+
+                <p class="text-sm text-white">
+                    Faça login para acessar sua conta e encontrar mais ofertas.
+                </p>
+            </div>
+
+            <div class="side-b">
+                <ul class="login-by">
+                    <li><a href="https://www.linkedin.com" class="linkedin"><i class="fa-brands fa-linkedin"></i> Entrar com LinkedIn</a></li>
+                    <li><a href="https://www.google.com" class="google"><i class="fa-brands fa-google"></i> Entrar com Google</a></li>
+                    <li><a href="https://www.facebook.com" class="facebook"><i class="fa-brands fa-facebook-f"></i> Entrar com Facebook</a></li>
+                </ul>
+
+                <div class="form">
+                    <form action="">
+                        <fieldset>
+                            <label for="cadastro-nome">E-mail</label>
+                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="cadastro-senha">Senha</label>
+                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+
+                            <!-- <span class="input-show-pass">
+                                <i class="fa-regular fa-eye"></i> -->
+                                <!-- <i class="fa-regular fa-eye-slash"></i> -->
+                            <!-- </span> -->
+                        </fieldset>
+                        
+                        
+                        <div class="flex flex-wrap justify-between">
+                            <label for="cadastro-lembrar">
+                                <input type="checkbox" name="cadastro-lembrar" id="cadastro-lembrar">
+                                Lembrar
+                            </label>
+
+                            <button class="link">Esqueci a Senha</button>
+                        </div>
+
+                        <div class="action-box">
+                            <button class="btn-sm-blue">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- confirmação -->
+        <div class="modal" id="mdl-confirmar">
+
+        <div class="modal-content">
+            <h2>Deseja apagar serviço?</h2>
+
+            <p class="msg">
+                <span>Titulo do serviço</span>
+                <span>25 Set 2024</span>
+            </p>
+
+            <div class="action-box">
+                <button class="btn-sm-gray">Confirmar</button>
+                <button class="btn-sm-blue">Cancelar</button>
+            </div>
+        </div>
+
+        </div>
+
+        <span class="curtain"></span>
+    </div>
 
 </body>
 </html>
