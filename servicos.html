@@ -12,7 +12,7 @@
 </head>
 
 
-<body class="bg-ftem_g1">
+<body>
 
     <header class="main-header">
         <div class="header-content">
@@ -29,7 +29,7 @@
                 <span><i class="fa-solid fa-xmark close"></i></span>
             </div>
 
-            <div class="header-side">
+            <div class="header-side hidden">
                 <nav class="header-main-menu">
                     <a href="index.html" class="menu-item"><span>Home</span></a>
                     <a href="sobre.html" class="menu-item"><span>Sobre</span></a>
@@ -49,10 +49,12 @@
     </header>
 
 
-    <main class="wrap px-3">
-        <div class="content flex py-20 pt-36">
+    <main class="px-3 pt-32 bg-ftem_g1">
+        <div class="content flex flex-wrap pb-20">
 
-            <aside class="hidden md:block w-1/4">
+            <!-- side-bar de filtro -->
+            <aside class="w-full md:w-col-3">
+
                 <div class="servico-filtro">
                     <p class="text-xl font-semibold mb-3">Categorias</p>
 
@@ -66,10 +68,12 @@
                             <input type="checkbox" name="Categorias" id="">
                             <span>Texto</span>
                         </label>
+
                         <label>
                             <input type="checkbox" name="Categorias" id="">
                             <span>Programação</span>
                         </label>
+
                         <label>
                             <input type="checkbox" name="Categorias" id="">
                             <span>Aulas</span>
@@ -90,57 +94,133 @@
                             <input type="checkbox" name="Categorias" id="">
                             <span>Garibaldi</span>
                         </label>
+
                         <label>
                             <input type="checkbox" name="Categorias" id="">
                             <span>Bento Gonçalves</span>
                         </label>
                     </div>
                 </div>
+
             </aside>
 
-            <section class="w-full md:w-3/4 pl-0 md:pl-10">
 
-                <fieldset class="servicos-busca">
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" name="servico-busca" placeholder="Buscar...">
-                    </div>
+            <!-- lista de serviços -->
+            <section class="w-full md:w-col-9 pl-0 md:pl-10">
 
-                    <button class="btn-md-blue">
-                        <span>BUSCAR</span>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </fieldset>
+                <!-- campo de busca -->
+                <div class="busca lg mb-10">
+                    <form action="">
 
-                <div class="servicos-list">
+                        <div class="input">
+                            <input type="search" name="busca" placeholder="Buscar...">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        
+                        <button class="btn-md-blue" type="submit">
+                            <span>BUSCAR</span>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
 
-                    <div class="servicos-item">
-                        <a href="servicos-view.html" alt="UI designer web" class="servicos-img">
-                            <figure>
-                                <img src="" alt="icone do serviço">
-                            </figure>
+                    </form>
+                </div>
+                
+                <!-- resultado da busca -->
+                <div class="resultados">
+
+                    <div class="servico-item lg mb-5">
+                        <a href="servicos-view.html" alt="titulo do post" class="img">
+                            <img src="" alt="Icone do serviço">
                         </a>
 
-                        <div class="servico-title">
-                            <a href="servicos-view.html" alt="UI designer web">
-                                <p class="title-md">UI designer web</p>
+                        <div class="autor">
+                            <a href="servicos-view.html" alt="titulo do post">
+                                <h3>UI designer web</h3>
                             </a>
 
-                            <p class="text-base">Jonas de Camargo</p>
+                            <p>Jonas de Camargo</p>
                         </div>
 
-                        <div class="servico-tag">
-                            <ul>
+                        <div class="info">
+                            <ul class="tags-key blue">
                                 <li>Wireframe</li>
                                 <li>Prototyping</li>
                             </ul>
 
-                            <ul>
+                            <ul class="tag-info">
                                 <li>
                                     <i class="fa-solid fa-location-dot"></i>
-                                    Farroupilha / RS
+                                    Farroupilha
                                 </li>
-                                
+
+                                <li>
+                                    <i class="fa-solid fa-briefcase"></i>
+                                    Full-time
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- REMOVER/////REMOVER/////REMOVER/////REMOVER/////REMOVER/////REMOVER///// -->
+                    <div class="servico-item lg mb-5">
+                        <a href="servicos-view.html" alt="titulo do post" class="img">
+                            <img src="" alt="Icone do serviço">
+                        </a>
+
+                        <div class="autor">
+                            <a href="servicos-view.html" alt="titulo do post">
+                                <h3>UI designer web</h3>
+                            </a>
+
+                            <p>Jonas de Camargo</p>
+                        </div>
+
+                        <div class="info">
+                            <ul class="tags-key blue">
+                                <li>Wireframe</li>
+                                <li>Prototyping</li>
+                            </ul>
+
+                            <ul class="tag-info">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Farroupilha
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-briefcase"></i>
+                                    Full-time
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="servico-item lg mb-5">
+                        <a href="servicos-view.html" alt="titulo do post" class="img">
+                            <img src="" alt="Icone do serviço">
+                        </a>
+
+                        <div class="autor">
+                            <a href="servicos-view.html" alt="titulo do post">
+                                <h3>UI designer web</h3>
+                            </a>
+
+                            <p>Jonas de Camargo</p>
+                        </div>
+
+                        <div class="info">
+                            <ul class="tags-key blue">
+                                <li>Wireframe</li>
+                                <li>Prototyping</li>
+                            </ul>
+
+                            <ul class="tag-info">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Farroupilha
+                                </li>
+
                                 <li>
                                     <i class="fa-solid fa-briefcase"></i>
                                     Full-time
@@ -150,6 +230,7 @@
                     </div>
 
                 </div>
+
             </section>
 
         </div>

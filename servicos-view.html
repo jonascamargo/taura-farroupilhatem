@@ -12,7 +12,7 @@
 </head>
 
 
-<body class="bg-ftem_g1">
+<body>
 
     <header class="main-header">
         <div class="header-content">
@@ -29,7 +29,7 @@
                 <span><i class="fa-solid fa-xmark close"></i></span>
             </div>
 
-            <div class="header-side">
+            <div class="header-side hidden">
                 <nav class="header-main-menu">
                     <a href="index.html" class="menu-item"><span>Home</span></a>
                     <a href="sobre.html" class="menu-item"><span>Sobre</span></a>
@@ -49,10 +49,12 @@
     </header>
 
 
-    <main class="wrap px-3">
-        <div class="content flex py-20 pt-36">
+    <main class="pt-32 px-3 bg-ftem_g1">
+        <div class="content flex flex-wrap pb-20">
 
-            <aside class="hidden md:block w-1/4">
+            <!-- side-bar de filtro -->
+            <aside class="w-full md:w-col-3">
+
                 <div class="servico-filtro">
                     <p class="text-xl font-semibold mb-3">Categorias</p>
 
@@ -66,10 +68,12 @@
                             <input type="checkbox" name="Categorias" id="">
                             <span>Texto</span>
                         </label>
+
                         <label>
                             <input type="checkbox" name="Categorias" id="">
                             <span>Programação</span>
                         </label>
+
                         <label>
                             <input type="checkbox" name="Categorias" id="">
                             <span>Aulas</span>
@@ -90,121 +94,108 @@
                             <input type="checkbox" name="Categorias" id="">
                             <span>Garibaldi</span>
                         </label>
+
                         <label>
                             <input type="checkbox" name="Categorias" id="">
                             <span>Bento Gonçalves</span>
                         </label>
                     </div>
                 </div>
+
             </aside>
 
-            <section class="w-full md:w-3/4 pl-0 md:pl-10">
 
-                <fieldset class="servicos-busca">
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" name="servico-busca" placeholder="Buscar...">
-                    </div>
-
-                    <button class="btn-md-blue">
-                        <span>BUSCAR</span>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </fieldset>
+            <!-- lista de serviços -->
+            <section class="w-full md:w-col-9 pl-0 md:pl-10">
                 
-                <div class="servico-view">
+                <!-- detalhe do serviço -->
+                <div class="servico-item lg mb-5">
+                    <a href="servicos-view.html" alt="titulo do post" class="img">
+                        <img src="" alt="Icone do serviço">
+                    </a>
 
-                    <div class="servicos-item">
-                        <a href="servico-view.html" alt="UI designer web" class="servicos-img">
-                            <figure>
-                                <img src="" alt="icone do serviço">
-                            </figure>
+                    <div class="autor">
+                        <a href="servicos-view.html" alt="titulo do post">
+                            <h3>UI designer web</h3>
                         </a>
 
-                        <div class="servico-title">
-                            <a href="servico-view.html" alt="UI designer web">
-                                <p class="title-md">UI designer web</p>
-                            </a>
-
-                            <p class="text-base">Jonas de Camargo</p>
-                        </div>
-
-                        <div class="servico-tag">
-                            <ul>
-                                <li>Wireframe</li>
-                                <li>Prototyping</li>
-                            </ul>
-
-                            <ul>
-                                <li>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    Farroupilha / RS
-                                </li>
-                                
-                                <li>
-                                    <i class="fa-solid fa-briefcase"></i>
-                                    Full-time
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="servico-data">
-                            <h3 class="title-sm">Descrição</h3>
-
-                            <p class="text-base">
-                                Sou João Almeida, UI designer com mais de 5 anos de experiência na 
-                                criação de interfaces intuitivas e visuais atraentes. Meu foco é 
-                                desenvolver sites e aplicativos que proporcionem uma excelente 
-                                experiência ao usuário, garantindo que a navegação seja fluida, 
-                                funcional e esteticamente agradável. 
-                            </p>
-
-                            <p class="text-base">
-                                O que está incluído no meu serviço:
-                            </p>
-
-                            <ul>
-                                <li>Design de interfaces web para sites, landing pages e e-commerces</li>
-                                <li>Ajustes com base no feedback do cliente</li>
-                                <li>Garantia de uma interface amigável e centrada no usuário</li>
-                                <li>Entrega de arquivos prontos para desenvolvedores (Figma, Adobe XD, etc.)</li>
-                            </ul>
-
-                            <div class="img-grid">
-                                <figure>
-                                    <img src="./assets/imgs/servicos-imgs01.png" alt="imagem sobre o serviço">
-                                </figure>
-
-                                <figure>
-                                    <img src="./assets/imgs/servicos-imgs01.png" alt="imagem sobre o serviço">
-                                </figure>
-                            </div>
-
-                            <h3 class="title-sm">Diferencial</h3>
-
-                            <p class="text-base">
-                                O que está incluído no meu serviço:
-                            </p>
-
-                            <ul>
-                                <li>Design de interfaces web para sites, landing pages e e-commerces</li>
-                                <li>Ajustes com base no feedback do cliente</li>
-                                <li>Garantia de uma interface amigável e centrada no usuário</li>
-                                <li>Entrega de arquivos prontos para desenvolvedores (Figma, Adobe XD, etc.)</li>
-                            </ul>
-
-                            <h3 class="title-sm">Prazo de entrega</h3>
-
-                            <p class="text-base">De acordo com a complexidade do projeto, geralmente entre 5 a 10 dias úteis.</p>
-
-                            <div class="action-box-r mt-10">
-                                <a href="servicos.html" class="link"><i class="fa-solid fa-arrow-left"></i>VOLTAR</a>
-
-                                <a href="#modal" class="btn-md-blue">Entrar em Contato</a>
-                            </div>
-                        </div>
+                        <p>Jonas de Camargo</p>
                     </div>
 
+                    <div class="info">
+                        <ul class="tags-key blue">
+                            <li>Wireframe</li>
+                            <li>Prototyping</li>
+                        </ul>
+
+                        <ul class="tag-info">
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Farroupilha
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-briefcase"></i>
+                                Full-time
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="description">
+                        <h3 class="title-sm">Descrição</h3>
+
+                        <p class="text-base">
+                            Sou João Almeida, UI designer com mais de 5 anos de experiência na 
+                            criação de interfaces intuitivas e visuais atraentes. Meu foco é 
+                            desenvolver sites e aplicativos que proporcionem uma excelente 
+                            experiência ao usuário, garantindo que a navegação seja fluida, 
+                            funcional e esteticamente agradável. 
+                        </p>
+
+                        <p class="text-base">
+                            O que está incluído no meu serviço:
+                        </p>
+
+                        <ul>
+                            <li>Design de interfaces web para sites, landing pages e e-commerces</li>
+                            <li>Ajustes com base no feedback do cliente</li>
+                            <li>Garantia de uma interface amigável e centrada no usuário</li>
+                            <li>Entrega de arquivos prontos para desenvolvedores (Figma, Adobe XD, etc.)</li>
+                        </ul>
+
+                        <div class="img-grid">
+                            <figure>
+                                <img src="./assets/imgs/servicos-imgs01.png" alt="imagem sobre o serviço">
+                            </figure>
+
+                            <figure>
+                                <img src="./assets/imgs/servicos-imgs01.png" alt="imagem sobre o serviço">
+                            </figure>
+                        </div>
+
+                        <h3 class="title-sm">Diferencial</h3>
+
+                        <p class="text-base">
+                            O que está incluído no meu serviço:
+                        </p>
+
+                        <ul>
+                            <li>Design de interfaces web para sites, landing pages e e-commerces</li>
+                            <li>Ajustes com base no feedback do cliente</li>
+                            <li>Garantia de uma interface amigável e centrada no usuário</li>
+                            <li>Entrega de arquivos prontos para desenvolvedores (Figma, Adobe XD, etc.)</li>
+                        </ul>
+
+                        <h3 class="title-sm">Prazo de entrega</h3>
+
+                        <p class="text-base">De acordo com a complexidade do projeto, geralmente entre 5 a 10 dias úteis.</p>
+
+                        <div class="action-box-r mt-10">
+                            <a href="servicos.html" class="link"><i class="fa-solid fa-arrow-left"></i>VOLTAR</a>
+
+                            <a href="#modal" class="btn-sm-blue">Entrar em Contato</a>
+                        </div>
+                    </div>
                 </div>
 
             </section>

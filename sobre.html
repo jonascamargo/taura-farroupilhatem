@@ -14,7 +14,7 @@
 
 <body>
 
-    <header class="main-header">
+    <header class="main-header-clean">
         <div class="header-content">
 
             <div class="header-logo">
@@ -50,9 +50,10 @@
 
 
     <main>
+        
+        <section class="cover-xl bg-gradient-lite-blue">
+            <div>
 
-        <section class="wrap bg-gradient-lite-blue">
-            <div class="px-3 pt-28 pb-10 bg-[url(./../../assets/imgs/footer-logo-bg.png)] bg-no-repeat bg-[100%] bg-right">
                 <div class="content flex items-center">
 
                     <div class="w-full md:w-2/3 pr-16">
@@ -70,11 +71,13 @@
                     </div>
 
                 </div>
+
             </div>
         </section>
 
 
-        <section class="wrap bg-ftem_bl2 px-3 py-28">
+        <!-- lista de empresas apoadas -->
+        <section class="px-3 py-28 bg-ftem_bl2">
             <div class="content">
 
                 <header class="pb-10">
@@ -96,16 +99,20 @@
         </section>
 
 
-        <section class="wrap px-3 py-28">
+        <!-- apresentação -->
+        <section class="px-3 py-28">
             <div class="content flex flex-wrap justify-between items-center">
 
-                <div class="w-full md:w-1/2 pr-0 md:pr-10 mb-10 md:mb-0">
+                <div class="w-full md:w-col-6 pr-0 md:pr-14 mb-10 md:mb-0">
+
                     <figure class="text-center">
                         <img src="./assets/imgs/farrTem-logo-ver.png" alt="FarroupilhaTem" class="inline-block">
                     </figure>
+
                 </div>
 
-                <div class="w-full md:w-1/2">
+                <div class="w-full md:w-col-6">
+
                     <header class="pb-12">
                         <h2 class="title-lg text-ftem_d3">Quem Somos?</h2>
                     </header>
@@ -121,27 +128,34 @@
                         Com uma equipe dedicada e serviços personalizados, oferecemos soluções 
                         práticas e eficazes para empresas e indivíduos.
                     </p>
+
                 </div>
 
             </div>
         </section>
 
 
-        <section class="sobre-apres wrap px-3 py-28 bg-ftem_g1">
+        <!-- apresentação -->
+        <section class="px-3 py-28 bg-ftem_g1">
             <div class="content">
 
                 <header class="pb-16">
                     <h2 class="title-lg text-ftem_d3 text-center">O Que Oferecemos</h2>
                 </header>
 
-                <div>
-                    <div class="img">
+
+                <div class="flex flex-wrap flex-col-reverse md:flex-row justify-between items-center mb-14">
+
+                    <div class="img w-full md:w-col-6 flex justify-center md:justify-normal">
+
                         <figure>
-                            <img src="./assets/imgs/sobre-img02.png" alt="Para Empresas">
+                            <img src="./assets/imgs/sobre-img02.png" alt="Para Empresas" class="overflow-hidden rounded-md shadow-md">
                         </figure>
+
                     </div>
 
-                    <div class="info">
+                    <div class="info w-full md:w-col-6 pl-0 md:pl-14 mb-10 md:mb-0">
+
                         <h3 class="title-md text-ftem_d3 mb-8">Para Empresas</h3>
 
                         <p class="text-base">
@@ -149,11 +163,16 @@
                             ao cliente até a divulgação de profissionais. Nossa plataforma conecta você 
                             a oportunidades que ampliam seu mercado e ajudam a destacar seu trabalho.
                         </p>
+
                     </div>
+
                 </div>
 
-                <div>
-                    <div class="info">
+
+                <div class="flex flex-wrap justify-between items-center">
+
+                    <div class="info w-full md:w-col-6 pr-0 md:pr-14 mb-10 md:mb-0">
+
                         <h3 class="title-md text-ftem_d3 mb-8">Para Indivíduos</h3>
 
                         <p class="text-base">
@@ -161,20 +180,26 @@
                             poupando tempo e evitando estresse. Também oferecemos suporte especializado 
                             para idosos, ajudando com consultas, tarefas do dia a dia e lazer.
                         </p>
+
                     </div>
 
-                    <div class="img">
+
+                    <div class="img w-full md:w-col-6 flex justify-center md:justify-end">
+
                         <figure>
-                            <img src="./assets/imgs/sobre-img03.png" alt="Para Indivíduos">
+                            <img src="./assets/imgs/sobre-img03.png" alt="Para Indivíduos" class="overflow-hidden rounded-md shadow-md">
                         </figure>
+
                     </div>
+
                 </div>
 
             </div>
         </section>
 
 
-        <section class="wrap py-28">
+        <!-- valores -->
+        <section class="px-3 py-28">
             <div class="content">
 
                 <header class="max-w-screen-md mx-auto mb-14">
@@ -235,7 +260,8 @@
         </section>
 
 
-        <section class="bg-ftem_bl2 relative overflow-hidden">
+        <!-- banner -->
+        <section class="relative overflow-hidden bg-ftem_bl2">
             <div class="content p-10 min-h-[600px] flex items-center relative z-10">
 
                 <div class="max-w-screen-sm">

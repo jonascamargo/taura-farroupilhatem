@@ -12,7 +12,7 @@
 </head>
 
 
-<body class="bg-ftem_g1">
+<body>
 
     <header class="main-header">
         <div class="header-content">
@@ -49,22 +49,23 @@
     </header>
 
 
-    <main class="py-20">
+    <main class="bg-ftem_g1 py-20">
 
-        <section class="page-cover" style="background-image:url(./assets/imgs/blog-cover.png);">
-            <div class="content">
+        <header class="page-cover" style="background-image:url(./assets/imgs/blog-cover.png);">
+            <div class="content px-3">
 
                 <h2 class="title-xl">Blog</h2>
 
             </div>
-        </section>
+        </header>
 
 
-        <div class="content flex px-3 pt-10">
+        <div class="content flex flex-wrap px-3 pt-10 pb-20">
 
-            <section class="w-full md:w-3/4 pr-0 md:pr-10">
-                
+            <!-- post detalhado -->
+            <div class="w-full md:w-col-8 pr-0 md:pr-10">
                 <div class="blog-post">
+
                     <header>
                         <h2 class="title-md mb-8">Como a Concierge Empresarial Pode Transformar Seu Negócio</h2>
                     </header>
@@ -75,19 +76,17 @@
                         </figure>
 
                         <div class="box">
-                            <div class="post-tag text-ftem_b2 mb-5">
-                                <ul>
-                                    <li>
-                                        <i class="fa-solid fa-user"></i>
-                                        <span>Jonas C.</span>
-                                    </li>
-                                    
-                                    <li>
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                        <span>16 set 2024</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul class="tag-info mb-10">
+                                <li>
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>Jonas C.</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>16 set 2024</span>
+                                </li>
+                            </ul>
 
                             <div class="info">
                                 <p>
@@ -117,10 +116,11 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-                <!-- posts relacionado -->
-                <h2 class="title-md text-center mb-9">Continue no Blog</h2>
+
+                <h2 class="title-md text-center pt-5 mb-6">Continue no Blog</h2>
 
                 <div class="blog-block">
 
@@ -149,19 +149,12 @@
                     </a>
 
                 </div>
-                
-            </section>
+            </div>
 
-            
-            <aside class="hidden md:block w-1/4">
-                <form action="">
-                    <fieldset class="blog-busca">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" name="blog-busca" placeholder="Buscar...">
-                    </fieldset>
-                </form>
+            <!-- side-bar -->
+            <div class="w-full md:w-col-4 hidden md:block">
 
-                <div class="blog-side-box">
+                <div class="blog-side-box mb-10">
                     <p class="text-xl font-semibold mb-3">Top Posts</p>
                     
                     <ul class="blog-side-list">
@@ -187,7 +180,7 @@
                         <li>
                             <a href="blog-post.html" title="titulo do post">
                                 <figure class="img">
-                                    <img src="./assets/imgs/blog-post02-thumb01.png" alt="titulo do post">
+                                    <img src="./assets/imgs/blog-post01-thumb01.png" alt="titulo do post">
                                 </figure>
     
                                 <p class="info">Como a Concierge Empresarial Pode Transformar Seu Negócio...</p>
@@ -196,7 +189,7 @@
                         <li>
                             <a href="blog-post.html" title="titulo do post">
                                 <figure class="img">
-                                    <img src="./assets/imgs/blog-post01-thumb01.png" alt="titulo do post">
+                                    <img src="./assets/imgs/blog-post02-thumb01.png" alt="titulo do post">
                                 </figure>
     
                                 <p class="info">Como a Concierge Empresarial Pode Transformar Seu Negócio...</p>
@@ -208,13 +201,14 @@
                 <div class="blog-side-box">
                     <p class="text-xl font-semibold mb-3">Tags</p>
                     
-                    <div class="tag-grup">
-                        <a href="blog.html&Internet"><span>Internet</span></a>
-                        <a href="blog.html&Aulas"><span>Aulas</span></a>
-                        <a href="blog.html&Saúde"><span>Saúde</span></a>
-                    </div>
+                    <ul class="tags-key blue">
+                        <li><a href="blog.html&Internet"><span>Internet</span></a></li>
+                        <li><a href="blog.html&Aulas"><span>Aulas</span></a></li>
+                        <li><a href="blog.html&Saúde"><span>Saúde</span></a></li>
+                    </ul>
                 </div>
-            </aside>
+
+            </div>
 
         </div>
 

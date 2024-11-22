@@ -12,7 +12,7 @@
 </head>
 
 
-<body class="bg-ftem_g1">
+<body>
 
     <header class="main-header">
         <div class="header-content">
@@ -49,30 +49,41 @@
     </header>
 
 
-    <main class="py-20">
+    <main class="bg-ftem_g1 pt-20">
 
-        <section class="page-cover" style="background-image:url(./assets/imgs/blog-cover.png);">
+        <header class="page-cover" style="background-image:url(./assets/imgs/blog-cover.png);">
             <div class="content px-3">
 
                 <h2 class="title-xl">Blog</h2>
 
             </div>
-        </section>
+        </header>
 
 
-        <div class="content flex px-3 pt-10">
+        <div class="content flex flex-wrap pt-10 px-3 pb-20">
+            
+            <!-- lista de postagens -->
+            <div class="w-full md:w-col-8 pr-0 md:pr-10">
 
-            <section class="w-full md:w-3/4 pr-0 md:pr-10">
-                <div class="blog-posts-list">
-
-                    <!-- busca para o mobile -->
+                <!-- campo de busca -->
+                <div class="busca lg mb-10">
                     <form action="">
-                        <fieldset class="blog-busca to-mobile">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="search" name="blog-busca" placeholder="Buscar...">
-                        </fieldset>
-                    </form>
 
+                        <div class="input">
+                            <input type="search" name="busca" placeholder="Buscar...">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        
+                        <button class="btn-md-blue" type="submit">
+                            <span>BUSCAR</span>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                    </form>
+                </div>
+
+                <!-- resultado da busca -->
+                <div class="resultados">
 
                     <div class="blog-post-item">
                         <a href="blog-post.html" class="img">
@@ -84,7 +95,7 @@
                                 <a href="blog-post.html">
                                     <h2 class="title-md mb-8">Como a Concierge Empresarial Pode Transformar Seu Negócio</h2>
                                 </a>
-    
+
                                 <p class="text-lg mb-8">
                                     Se você é um pequeno empresário, sabe o quanto o tempo é 
                                     precioso. Com tantas responsabilidades, desde gerenciar 
@@ -92,82 +103,76 @@
                                 </p>
                             </div>
 
-                            <div class="post-tag text-gray-300 mt-5">
-                                <ul>
+                            <div class="data">
+                                <ul class="tag-info">
                                     <li>
                                         <i class="fa-solid fa-user"></i>
                                         <span>Jonas C.</span>
                                     </li>
-                                    
+
                                     <li>
                                         <i class="fa-solid fa-calendar-days"></i>
                                         <span>16 set 2024</span>
                                     </li>
                                 </ul>
-                                
-                                <div class="action-box">
-                                    <a href="blog-post.html" class="link">
-                                        Continue lendo
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
+
+                                <a href="blog-post.html" class="link">
+                                    Continue lendo
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- REMOVER/////REMOVER/////REMOVER/////REMOVER///// -->
                     <div class="blog-post-item">
                         <a href="blog-post.html" class="img">
-                            <img src="./assets/imgs/blog-post02-img02.png" alt="Titulo do post">
+                            <img src="./assets/imgs/blog-post02-img01.png" alt="Titulo do post">
                         </a>
 
                         <div class="box">
                             <div class="info">
                                 <a href="blog-post.html">
-                                    <h2 class="title-md mb-8">5 Benefícios de Ter Suporte Especializado para Idosos</h2>
+                                    <h2 class="title-md mb-8">Como a Concierge Empresarial Pode Transformar Seu Negócio</h2>
                                 </a>
 
                                 <p class="text-lg mb-8">
-                                    Na vida corrida de hoje, encontrar tempo para acompanhar seus entes 
-                                    queridos, especialmente idosos, pode ser desafiador. ...
+                                    Se você é um pequeno empresário, sabe o quanto o tempo é 
+                                    precioso. Com tantas responsabilidades, desde gerenciar 
+                                    a equipe até lidar com os clientes ...
                                 </p>
                             </div>
 
-                            <div class="post-tag text-gray-300 mt-5">
-                                <ul>
+                            <div class="data">
+                                <ul class="tag-info">
                                     <li>
                                         <i class="fa-solid fa-user"></i>
                                         <span>Jonas C.</span>
                                     </li>
-                                    
+
                                     <li>
                                         <i class="fa-solid fa-calendar-days"></i>
                                         <span>16 set 2024</span>
                                     </li>
                                 </ul>
-                                
-                                <div class="action-box">
-                                    <a href="blog-post.html" class="link">
-                                        Continue lendo
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </div>
+
+                                <a href="blog-post.html" class="link">
+                                    Continue lendo
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </section>
 
+            </div>
             
-            <aside class="hidden md:block w-1/4">
-                <form action="">
-                    <fieldset class="blog-busca">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" name="blog-busca" placeholder="Buscar...">
-                    </fieldset>
-                </form>
 
-                <div class="blog-side-box">
+            <!-- side-bar -->
+            <div class="w-full md:w-col-4 hidden md:block">
+
+                <div class="blog-side-box mb-10">
                     <p class="text-xl font-semibold mb-3">Top Posts</p>
                     
                     <ul class="blog-side-list">
@@ -181,6 +186,7 @@
                             </a>
                         </li>
 
+                        <!-- REMOVER////REMOVER////REMOVER////REMOVER//// -->
                         <li>
                             <a href="blog-post.html" title="titulo do post">
                                 <figure class="img">
@@ -214,14 +220,15 @@
                 <div class="blog-side-box">
                     <p class="text-xl font-semibold mb-3">Tags</p>
                     
-                    <div class="tag-grup">
-                        <a href="blog.html&Internet"><span>Internet</span></a>
-                        <a href="blog.html&Aulas"><span>Aulas</span></a>
-                        <a href="blog.html&Saúde"><span>Saúde</span></a>
-                    </div>
+                    <ul class="tags-key blue">
+                        <li><a href="blog.html&Internet"><span>Internet</span></a></li>
+                        <li><a href="blog.html&Aulas"><span>Aulas</span></a></li>
+                        <li><a href="blog.html&Saúde"><span>Saúde</span></a></li>
+                    </ul>
                 </div>
-            </aside>
 
+            </div>
+            
         </div>
 
     </main>

@@ -36,6 +36,20 @@ module.exports = {
         'gradient-lite-blue': 'linear-gradient(90deg, #B6C9E1 0%, #EFF8FD 100%)',
         none: 'none',
       },
+      width: {
+        'col-1': 'calc((100% / 12))',
+        'col-2': 'calc((100% / 12) * 2)',
+        'col-3': 'calc((100% / 12) * 3)',
+        'col-4': 'calc((100% / 12) * 4)',
+        'col-5': 'calc((100% / 12) * 5)',
+        'col-6': 'calc((100% / 12) * 6)',
+        'col-7': 'calc((100% / 12) * 7)',
+        'col-8': 'calc((100% / 12) * 8)',
+        'col-9': 'calc((100% / 12) * 9)',
+        'col-10': 'calc((100% / 12) * 10)',
+        'col-11': 'calc((100% / 12) * 11)',
+        'col-12': 'calc(100%)',
+      },
     }
   },
 

@@ -29,7 +29,7 @@
                 <span><i class="fa-solid fa-xmark close"></i></span>
             </div>
 
-            <div class="header-side opacity-5">
+            <div class="header-side">
                 <nav class="header-main-menu">
                     <a href="index.html" class="menu-item"><span>Home</span></a>
                     <a href="sobre.html" class="menu-item"><span>Sobre</span></a>
@@ -51,126 +51,140 @@
 
     <main class="pt-20">
 
-        <section class="page-cover" style="background-image:url(./assets/imgs/contato-cover.png);">
+        <header class="page-cover" style="background-image:url(./assets/imgs/contato-cover.png);">
             <div class="content px-3">
 
                 <h2 class="title-xl">Contato</h2>
 
             </div>
-        </section>
+        </header>
 
 
         <section class="contato-forms px-3 pt-10">
-            <div class="content">
+            <div class="content flex flex-wrap">
 
-                <div class="form-col body">
-                    <ul>
-                        <li data-tab="form-contato" class="active">Mande Mensagem</li>
+                <!-- formularios -->
+                <div class="body w-full md:w-col-8 pr-0 md:pr-10 mb-5 md:mb-0">
+                    <div class="contato-box">
 
-                        <li data-tab="form-trabalhe">Trabalhe Conosco</li>
-                    </ul>
+                        <ul class="tab-menu">
+                            <li data-tab="form-contato" class="active">Mande Mensagem</li>
+                            <li data-tab="form-trabalhe">Trabalhe Conosco</li>
+                        </ul>
 
-                    <div class="content-form">
-                        <div class="form-item" id="form-contato">
-                            <form action="">
-                                <fieldset>
-                                    <label for="mensagem-nome">Nome</label>
-                                    <input type="text" name="mensagem-nome" id="mensagem-nome">
-                                </fieldset>
+                        <div class="tab-content">
+                            <div class="form-item" id="form-contato">
+                                <form action="" class="form">
+                                    <fieldset>
+                                        <label for="mensagem-nome">Nome</label>
+                                        <input type="text" name="mensagem-nome" id="mensagem-nome">
+                                    </fieldset>
 
-                                <fieldset>
-                                    <label for="mensagem-email">E-mail</label>
-                                    <input type="email" name="mensagem-email" id="mensagem-email">
-                                </fieldset>
-
-                                <fieldset>
-                                    <label for="mensagem-telefone">Telefone</label>
-                                    <input type="tel" name="mensagem-telefone" id="mensagem-telefone">
-                                </fieldset>
-
-                                <fieldset>
-                                    <label for="mensagem-mensagem">Mensagem</label>
-                                    <textarea name="mensagem-mensagem" id="mensagem-mensagem"></textarea>
-                                </fieldset>
-
-                                <div class="action-box">
-                                    <button class="btn-sm-blue">ENVIAR MENSAGEM</button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="form-item" id="form-trabalhe">
-                            <form action="">
-                                <fieldset>
-                                    <label for="mensagem-nome">Nome</label>
-                                    <input type="text" name="mensagem-nome" id="mensagem-nome">
-                                </fieldset>
-
-                                <fieldset>
-                                    <label for="mensagem-email">E-mail</label>
-                                    <input type="email" name="mensagem-email" id="mensagem-email">
-                                </fieldset>
-
-                                <fieldset>
-                                    <label for="mensagem-telefone">Telefone</label>
-                                    <input type="tel" name="mensagem-telefone" id="mensagem-telefone">
-                                </fieldset>
-
-                                <fieldset>
-                                    <label for="mensagem-curriculo">Curriculo</label>
-                                    <div class="input-file">
-                                        <input type="file" name="mensagem-curriculo" id="mensagem-curriculo">
+                                    <div class="form-colum">
+                                        <fieldset>
+                                            <label for="mensagem-email">E-mail</label>
+                                            <input type="email" name="mensagem-email" id="mensagem-email">
+                                        </fieldset>
+        
+                                        <fieldset>
+                                            <label for="mensagem-telefone">Telefone</label>
+                                            <input type="tel" name="mensagem-telefone" id="mensagem-telefone">
+                                        </fieldset>
                                     </div>
-                                </fieldset>
 
-                                <div class="action-box">
-                                    <button class="btn-sm-blue">ENVIAR CURRICULO</button>
-                                </div>
-                            </form>
+                                    <fieldset>
+                                        <label for="mensagem-mensagem">Mensagem</label>
+                                        <textarea name="mensagem-mensagem" id="mensagem-mensagem"></textarea>
+                                    </fieldset>
+
+                                    <div class="action-box">
+                                        <button class="btn-sm-blue">ENVIAR MENSAGEM</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="form-item hidden" id="form-trabalhe">
+                                <form action="" class="form">
+                                    <fieldset>
+                                        <label for="mensagem-nome">Nome</label>
+                                        <input type="text" name="mensagem-nome" id="mensagem-nome">
+                                    </fieldset>
+
+                                    <div class="form-colum">
+                                        <fieldset>
+                                            <label for="mensagem-email">E-mail</label>
+                                            <input type="email" name="mensagem-email" id="mensagem-email">
+                                        </fieldset>
+        
+                                        <fieldset>
+                                            <label for="mensagem-telefone">Telefone</label>
+                                            <input type="tel" name="mensagem-telefone" id="mensagem-telefone">
+                                        </fieldset>
+                                    </div>
+
+                                    <fieldset>
+                                        <label for="mensagem-curriculo">Curriculo</label>
+                                        <div class="input-file">
+                                            <input type="file" name="mensagem-curriculo" id="mensagem-curriculo">
+                                        </div>
+                                    </fieldset>
+
+                                    <div class="action-box">
+                                        <button class="btn-sm-blue">ENVIAR CURRICULO</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
-                <div class="form-col side">
-                    <div class="social-lista">
-                        <a href="https:www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
 
-                        <a href="https:www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <!-- side-bar formas de contato -->
+                <div class="side w-full md:w-col-4">
+                    <div class="contato-box">
 
-                        <a href="https:www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <div class="social-lista text-ftem_b2">
+                            <a href="https:www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
 
-                        <a href="https:www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https:www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+
+                            <a href="https:www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+
+                            <a href="https:www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+
+                        <ul class="contato-lista">
+                            <li>
+                                <p>Endereço</p>
+                                <a href="https://map.google.com/" target="_blank" rel="noopener noreferrer">
+                                    Vitalina Farias de Lima 54 | Bairro São José | Farroupilha - RS
+                                </a>
+                            </li>
+
+                            <li>
+                                <p>E-mail</p>
+                                <a href="mailto:contato@farroupilhatem.com.br">contato@farroupilhatem.com.br</a>
+                            </li>
+
+                            <li class="tel">
+                                <p>Telefone</p>
+                                <a href="tel:54981264462">54 98126.4462</a>
+                            </li>
+                        </ul>
+
                     </div>
-
-                    <ul>
-                        <li>
-                            <p>Endereço</p>
-                            <a href="https://map.google.com/" target="_blank" rel="noopener noreferrer">
-                                Vitalina Farias de Lima 54 | Bairro São José | Farroupilha - RS
-                            </a>
-                        </li>
-
-                        <li>
-                            <p>E-mail</p>
-                            <a href="mailto:contato@farroupilhatem.com.br">contato@farroupilhatem.com.br</a>
-                        </li>
-
-                        <li>
-                            <p>Telefone</p>
-                            <a href="tel:54981264462">54 98126.4462</a>
-                        </li>
-                    </ul>
                 </div>
 
             </div>
         </section>
+        
 
-
-        <!-- <section class="map-frame px-3 py-28">
+        <section class="map-frame px-3 py-28">
             <div class="content overflow-hidden rounded-md shadow-md">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6963.785929614081!2d-51.352247653489584!3d-29.2267027013819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c1e281187426d%3A0x61eab303946f7e0e!2sCentro%2C%20Farroupilha%20-%20RS%2C%2095180-000!5e0!3m2!1spt-BR!2sbr!4v1732205550319!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
-        </section> -->
-
+        </section>
+        
     </main>
     
 
