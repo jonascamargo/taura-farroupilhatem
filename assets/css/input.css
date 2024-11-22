@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Unbounded:wght@200..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
 
 /* ===== TITULOS */
 
 .title-base {
     @apply font-black;
-    font-family: 'Montserrat', 'Courier New', Courier, monospace;
+    font-family: "Montserrat", sans-serif;
 }
 .title-2xl {
     @apply title-base text-4xl sm:text-5xl lg:text-6xl;
@@ -279,22 +285,36 @@
 /* ===== TAB */
 /* ----- menu tab */
 .tab-menu {
-    @apply border-b px-5 flex flex-wrap gap-10;
+    @apply border-b px-5 flex flex-wrap justify-center sm:justify-normal gap-10;
 }
 .tab-menu li {
-    @apply text-sm text-gray-400 uppercase font-semibold cursor-pointer py-6;
+    @apply text-sm text-gray-400 uppercase font-semibold cursor-pointer py-3 sm:py-6;
     @apply transition ease-linear hover:text-gray-500
 }
 .tab-menu li.active {
-    @apply text-ftem_b2 border-b-2 border-ftem_b2;
+    @apply border-b-2 border-ftem_b2;
+}
+.tab-menu li.active > * {
+    @apply text-ftem_b2;
+}
+
+.tab-menu li span {
+    @apply hidden sm:block;
+}
+.tab-menu li i {
+    @apply block sm:hidden text-3xl;
 }
 
 
 
 /* ===== MODAL */
+/* --- classe para barrar a rolagem do corpo do site */
+.modalOpening {
+    @apply overflow-y-hidden;
+}
 
 .modal-stage {
-    @apply fixed z-50 left-0 top-0 w-full h-full bg-transparent hidden items-center p-5 justify-center;
+    @apply fixed z-50 left-0 top-0 w-full bg-transparent hidden items-center p-5 justify-center h-screen overflow-y-auto;
 }
 .modal-stage.show {
     @apply flex;
@@ -304,8 +324,12 @@
     @apply absolute z-0 left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.5)];
 }
 
+.modalCloser {
+    @apply text-3xl text-ftem_b1 fixed z-50 right-2 top-2 bg-white rounded-full cursor-pointer;
+}
+
 .modal {
-    @apply hidden flex-wrap overflow-hidden rounded-lg shadow-lg relative z-10 -top-10 opacity-0;
+    @apply hidden w-full sm:w-auto flex-wrap overflow-hidden rounded-lg shadow-lg relative z-10 -top-10 opacity-0;
 }
 .modal-stage.show .modal.wait {
     @apply flex;
@@ -320,10 +344,10 @@
 }
 
 .modal .side-a {
-    @apply w-full sm:w-col-5 p-8 bg-ftem_b2;
+    @apply hidden sm:block w-full sm:w-col-5 p-6 sm:p-8 bg-ftem_b2;
 }
 .modal .side-b {
-    @apply w-full sm:w-col-7 p-8 bg-white;
+    @apply w-full sm:w-col-7 p-6 sm:p-8 bg-white;
 }
 
 /* ----- login redes sociais */
@@ -644,7 +668,7 @@
 
 /* ----- base para item de grid e lista */
 .servico-item {
-    @apply bg-white rounded-md p-5 flex flex-wrap items-center shadow-md;
+    @apply bg-white rounded-md p-3 sm:p-5 flex flex-wrap items-center shadow-md;
     @apply transition ease-linear hover:shadow-lg
 }
 
@@ -761,7 +785,7 @@
 }
 
 .blog-post-item .box {
-    @apply p-8 pt-0;
+    @apply p-4 sm:p-8 pt-0;
 }
 
 .blog-post-item .info {
@@ -793,10 +817,10 @@
     @apply transition ease-linear shadow-sm hover:shadow-md;
 }
 .blog-block a img {
-    @apply w-full;
+    @apply w-auto sm:w-full;
 }
 .blog-block a p {
-    @apply text-xl md:text-base inline-block p-5;
+    @apply text-base md:text-lg inline-block p-5 bg-red-300;
 }
 
 
@@ -807,7 +831,7 @@
     @apply bg-white rounded-md shadow-md;
 }
 .contato-box .tab-content {
-    @apply p-10;
+    @apply p-5 sm:p-10;
 }
 .contato-box .tab-content > * {
     display: block;
@@ -817,7 +841,7 @@
 }
 
 .contato-box .tab-menu {
-    @apply px-10;
+    @apply px-5 sm:px-10;
 }
 
 .contato-box .social-lista {
@@ -825,7 +849,7 @@
 }
 
 .contato-lista {
-    @apply p-10 overflow-hidden;
+    @apply p-5 sm:p-10 overflow-hidden;
 }
 .contato-lista li {
     @apply mb-10;

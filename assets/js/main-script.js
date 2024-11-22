@@ -1,5 +1,7 @@
+const body = document.querySelector('body')
 const mainMenu = document.querySelector('.main-header, .main-header-clean')
 const menuSandwich = document.querySelector('.header-ico-mob')
+
 
 // vericia se a pagina esta no topo
 const isScrolling = (() => {
@@ -44,11 +46,12 @@ function addActive( target ){
 }
 
 tabs.forEach(tab => {
-    tab.addEventListener('click',(e) => {
+    tab.addEventListener('click', (e) => {
+        const target = e.currentTarget;
         const idTarget = '#' + e.currentTarget.dataset.tab,
               tabTarget = document.querySelector(idTarget)
 
-        addActive( e.target )
+        addActive( target )
         addActive( tabTarget )
     })
 })
@@ -65,6 +68,7 @@ const modalOpen = ((e) => {
     const id    = e.dataset.modal,
           modal = document.querySelector( '#'+id )
     
+    body.classList.add('modalOpening')
     // expoe o container do modal
     modalStage.classList.add('show')
     // prepara o modal pra animar
@@ -82,6 +86,7 @@ const modalOpen = ((e) => {
 const modalClose = (() => {
     const modal = document.querySelector('.modal.wait.show')
 
+    body.classList.remove('modalOpening')
     // animando a saida do modal
     modal.classList.add('out')
     // Espera até o próximo ciclo de animação limpar tudo
@@ -104,6 +109,12 @@ modalCallers.forEach(btn => {
     })
 })
 
+// botao pra fechar modal
+document.querySelector('.modalCloser').addEventListener('click', () => { modalClose() })
+// ESC para fechar modal
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modalStage.classList.contains('show')) modalClose()
+});
 
 // abre fecha menu mobile
 menuSandwich.addEventListener( 'click', () => { mainMenu.classList.toggle('open') } )
