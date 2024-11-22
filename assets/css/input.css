@@ -354,87 +354,188 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===== HEADER PRINCIPAL */
 
-.main-header {
-    @apply main-header-clean bg-white shadow-lg;
-}
 .main-header-clean {
-    @apply fixed z-30 w-full left-0 top-0 px-3;
+    @apply fixed left-0 top-0 z-20 w-full transition ease-linear;
+}
+.main-header {
+    @apply main-header-clean;
+}
+/* ----- quando rolar a pagina o fundo fica branco e a sombra aparece */
+.scrolled {
+    @apply shadow-md bg-white;
 }
 
 .header-content {
-    @apply max-w-screen-xl mx-auto relative flex justify-between items-center;
+    @apply max-w-screen-xl mx-auto flex flex-wrap items-center justify-between relative;
 }
 
-/* ----- logo do cabeço */
-.header-logo {
-    @apply py-4
-}
+/* ----- logo do cabeço
+.header-logo {} */
 
-.header-side {
-    @apply bg-white shadow-lg absolute z-10 top-20 left-0 -mr-3 -ml-3;
-    width: calc(100% + 24px);
-}
-
-.menu-item-text {
-    @apply text-sm font-bold uppercase transition ease-linear;
-    font-family: 'Montserrat', 'Courier New', Courier, monospace;
-}
-
-/* ----- item do menu */
-.menu-item > span {
-    @apply menu-item-text text-ftem_d2;
-}
-.menu-item:hover > span,
-.menu-item.active > span {
-    @apply text-ftem_b2 relative;
-}
-.menu-item.active > span:after {
-    @apply content-[""] absolute h-full w-[3px] -right-5 top-0 bg-ftem_b2;
-}
-
-/* ----- estilo botão para o menu */
-.menu-btn {
-    @apply bg-ftem_b2 px-5 py-3 rounded-sm;
-    @apply transition ease-linear hover:bg-ftem_b1;
-}
-.menu-btn > span {
-    @apply menu-item-text text-white;
-}
-
-/* ----- menu principal */
-.header-main-menu {
-    @apply flex flex-wrap;
-}
-.header-main-menu .menu-item {
-    @apply text-right w-full px-5;
-}
-.header-main-menu .menu-item > span {
-    @apply inline-block py-3;
-}
-
-/* ----- menu do usuario */
-.header-user {
-    @apply flex flex-wrap items-center justify-end p-4 relative;
-}
-.header-user:before {
-    @apply content-[''] absolute top-0 right-[12%] bg-gray-200 w-4/5 h-px
-}
-.header-user .menu-btn {
-    @apply ml-5
-}
-
-/* ----- icone menu sandwich */
+/* ----- menu sandwich icone */
 .header-ico-mob {
-    @apply mr-2 block;
-}
-.header-ico-mob i {
-    @apply text-4xl text-ftem_b2 cursor-pointer px-3;
+    @apply text-3xl text-ftem_b2;
 }
 .header-ico-mob .open {
     @apply hidden;
 }
+
+.menu-item-text {
+    @apply text-[13px] font-semibold uppercase
+}
+.menu-item {
+    @apply text-ftem_d3 inline-block px-2 md:px-5;
+}
+.menu-item span {
+    @apply menu-item-text inline-block relative;
+    @apply transition ease-linear hover:text-ftem_b2;
+}
+
+.menu-item.active span {
+    @apply text-ftem_b2;
+}
+
+.menu-btn {
+    @apply menu-item-text text-white bg-ftem_b2 px-3 lg:px-5 py-4 rounded-sm;
+    @apply transition ease-linear hover:bg-ftem_b1;
+}
+
+
+/* ---------- estilo / MOBILE */
+.main-header-clean.mobile  {
+    @apply px-0;
+}
+
+.mobile .header-logo {
+    @apply ml-3;
+}
+
+.mobile .header-ico-mob {
+    @apply mr-3;
+}
+
+.mobile .header-side {
+    @apply absolute w-full right-0 top-20 bg-white shadow-lg;
+}
+
+.mobile .header-main-menu {
+    @apply text-right;
+}
+.mobile .header-main-menu .menu-item {
+    @apply block p-0;
+}
+.mobile .header-main-menu .menu-item span {
+    @apply p-3 pr-6;
+}
+
+.mobile .header-user {
+    @apply flex flex-wrap items-center justify-end gap-5 border-t p-5;
+}
+
+.mobile .menu-item.active span:before {
+    @apply bg-ftem_b2 content-[''] absolute top-0 right-0 w-1 h-full;
+}
+
+
+/* ---------- estilo / DESKTOP */
+.main-header-clean.desk  {
+    @apply px-3;
+}
+
+/* ----- menu sandwich icone */
+.desk .header-ico-mob {
+    @apply hidden;
+}
+
+/* ----- menu de navegação */
+.desk .header-side {
+    @apply flex flex-wrap items-center;
+}
+
+.desk .menu-item.active span:before {
+    @apply bg-ftem_b2 content-[''] absolute top-0 left-0 w-full h-1;
+}
+
+/* ----- somente para o menu principal */
+.desk .header-main-menu {
+    @apply flex flex-wrap;
+}
+.desk .header-main-menu .menu-item {
+    @apply pb-3;
+}
+.desk .header-main-menu .menu-item span {
+    @apply pt-8 pb-5;
+}
+
+/* ----- somente menu de user */
+.desk .header-user {
+    @apply flex flex-wrap items-center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -759,55 +860,3 @@
 
 
 /* ===== ADAPTAÇÕES MOBILE */
-
-@screen md {
-    /* MENU PRINCIPAL */
-
-    .header-logo {
-        @apply py-0
-    }
-
-    .header-ico-mob {
-        @apply hidden;
-    }
-
-    .header-side {
-        @apply flex bg-inherit shadow-none relative z-auto top-[inherit] left-[inherit] w-auto ml-0 mr-0;
-    }
-    .header-main-menu .menu-item,
-    .header-user .menu-item {
-        @apply text-center w-[inherit] px-2;
-    }
-    .header-main-menu .menu-item > span,
-    .header-user .menu-item > span {
-        @apply inline-block pt-8 pb-9;
-    }
-    .header-main-menu .menu-item.active > span:after {
-        @apply h-[3px] w-full -right-0;
-    }
-
-    .header-user {
-        @apply p-[inherit];
-    }
-    .header-user:before {
-        @apply hidden;
-    }
-    .header-user .menu-btn {
-        @apply ml-2
-    }
-}
-
-@screen lg {
-    /* MENU PRINCIPAL */
-
-    .header-main-menu .menu-item {
-        @apply px-5;
-    }
-
-    .header-user:before {
-        @apply block relative mr-5 top-[inherit] right-[inherit] w-[2px] h-5;
-    }
-    .header-user .menu-btn {
-        @apply ml-5
-    }
-}
