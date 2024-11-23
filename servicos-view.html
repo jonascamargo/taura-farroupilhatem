@@ -56,52 +56,34 @@
         <div class="content flex flex-wrap pb-20">
 
             <!-- side-bar de filtro -->
-            <aside class="w-full md:w-col-3">
+            <aside class="w-full lg:w-col-3">
 
-                <div class="servico-filtro">
-                    <p class="text-xl font-semibold mb-3">Categorias</p>
-
-                    <div class="filtro-lista">
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Criação</span>
-                        </label>
+                <div class="servico-info-autor">
+                    <figure class="img">
+                        <img src="" alt="Icone do serviço">
+                    </figure>
     
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Texto</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Programação</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Aulas</span>
-                        </label>
+                    <div class="autor">
+                        <p>Jonasd C.</p>
                     </div>
-                </div>
-
-                <div class="servico-filtro">
-                    <p class="text-xl font-semibold mb-3">Localização</p>
-
-                    <div class="filtro-lista">
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Farroupilha</span>
-                        </label>
     
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Garibaldi</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Bento Gonçalves</span>
-                        </label>
+                    <div class="info">
+                        <ul class="tags-key blue">
+                            <li>Wireframe</li>
+                            <li>Prototyping</li>
+                        </ul>
+    
+                        <ul class="tag-info">
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Farroupilha
+                            </li>
+    
+                            <li>
+                                <i class="fa-solid fa-briefcase"></i>
+                                Full-time
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -109,43 +91,12 @@
 
 
             <!-- lista de serviços -->
-            <section class="w-full md:w-col-9 pl-0 md:pl-10">
+            <section class="w-full lg:w-col-9 pl-0 lg:pl-10">
                 
                 <!-- detalhe do serviço -->
                 <div class="servico-item lg mb-5">
-                    <a href="servicos-view.html" alt="titulo do post" class="img">
-                        <img src="" alt="Icone do serviço">
-                    </a>
-
-                    <div class="autor">
-                        <a href="servicos-view.html" alt="titulo do post">
-                            <h3>UI designer web</h3>
-                        </a>
-
-                        <p>Jonas de Camargo</p>
-                    </div>
-
-                    <div class="info">
-                        <ul class="tags-key blue">
-                            <li>Wireframe</li>
-                            <li>Prototyping</li>
-                        </ul>
-
-                        <ul class="tag-info">
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Farroupilha
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-briefcase"></i>
-                                Full-time
-                            </li>
-                        </ul>
-                    </div>
-
                     <div class="description">
-                        <h3 class="title-sm">Descrição</h3>
+                        <h3 class="title-lg">Edição de imagens</h3>
 
                         <p class="text-base">
                             Sou João Almeida, UI designer com mais de 5 anos de experiência na 
@@ -195,8 +146,14 @@
 
                         <div class="action-box-r mt-10">
                             <a href="servicos.html" class="link"><i class="fa-solid fa-arrow-left"></i>VOLTAR</a>
-
-                            <a href="#modal" class="btn-sm-blue">Entrar em Contato</a>
+                            
+                            <!-- 
+                            só pode entrar em contato quando estiver logado
+                            SIM - aparece modal de formulario
+                            NAO - campo para login
+                            -->
+                            <a href="#modal" class="btn-sm-blue" data-modal="mdl-login">Entrar em Contato (nao logado)</a>
+                            <a href="#modal" class="btn-sm-blue" data-modal="mdl-contato">Entrar em Contato (logado)</a>
                         </div>
                     </div>
                 </div>
@@ -284,6 +241,9 @@
 
     <!-- MODAL -->
     <div class="modal-stage">
+        <!-- formulario de contato para o serviço -->
+        <div class="modal" id="mdl-contato">formulario de contato</div>
+
         <!-- formulario de cadastro -->
         <div class="modal" id="mdl-cadastro">
 

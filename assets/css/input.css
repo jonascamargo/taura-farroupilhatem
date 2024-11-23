@@ -704,9 +704,28 @@ body {
 }
 
 /* ----- descrição detalhada o serviço */
-.servico-item .description {
-    @apply pt-10;
+.servico-info-autor {
+    @apply p-3 sm:p-5 bg-white rounded-md shadow-md mb-10 lg:mb-0 flex flex-wrap items-center;
 }
+
+.servico-info-autor .img {
+    @apply bg-ftem_b2 relative overflow-hidden rounded-md w-full sm:w-[180px] h-auto sm:h-[180px] lg:w-full lg:h-auto pb-[100%] sm:pb-0 lg:pb-[100%] mb-5;
+}
+.servico-info-autor .img img {
+    @apply absolute left-0 top-0 w-full h-full object-cover;
+}
+
+.servico-info-autor .autor {
+    @apply text-2xl font-semibold w-full sm:w-[calc(100%-180px)] lg:w-full pl-0 sm:pl-5 lg:pl-0;
+}
+
+.servico-info-autor .info {
+    @apply w-full mt-5 flex flex-wrap justify-between items-center;
+}
+.servico-info-autor .info ul {
+    @apply mb-3 sm:mb-0 lg:mb-3;
+}
+
 
 .servico-item .description > h3 {
     @apply mb-6;
