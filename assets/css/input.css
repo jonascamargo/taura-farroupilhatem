@@ -197,14 +197,14 @@ body {
 
 .form input:not([type="checkbox"]),
 .form textarea {
-    @apply border-2 border-gray-400 rounded-md w-full py-2 px-4 outline-none bg-transparent;
+    @apply border-2 border-gray-300 rounded-md w-full py-2 px-4 outline-none bg-transparent;
     @apply transition ease-linear hover:border-ftem_b2 focus:border-ftem_b1;
 }
 .form textarea {
     @apply w-full h-28 max-h-52 overflow-y-auto overflow-x-hidden;
 }
 .form input[type="file"] {
-    @apply bg-gray-300;
+    @apply bg-gray-100;
 }
 
 .form .action-box {
@@ -219,7 +219,8 @@ body {
 }
 
 .form-colum {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-5 mb-5;
+    /* @apply grid grid-cols-1 md:grid-cols-2 gap-5 mb-5; */
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5;
 }
 
 /* ----- botao mostrar senha
@@ -231,6 +232,11 @@ body {
     @apply hidden;
 }
 */
+
+
+
+
+
 
 
 
@@ -700,7 +706,7 @@ body {
 }
 
 .servico-item .info {
-    @apply w-full mt-5 flex justify-between gap-4;
+    @apply w-full mt-5 flex flex-wrap sm:flex-nowrap justify-between gap-4;
 }
 
 /* ----- descrição detalhada o serviço */
@@ -761,6 +767,27 @@ body {
 }
 .filtro-lista label input:checked + span {
     @apply font-semibold;
+}
+
+
+
+
+/* ===== HOME */
+
+/* banner concierge */
+.banner-concierge {
+    @apply max-w-screen-lg mx-auto overflow-hidden rounded-lg relative shadow-lg bg-ftem_b2;
+}
+.banner-concierge > img {
+    @apply hidden md:block w-full min-h-full object-cover absolute z-0 right-0 top-0;
+}
+
+.banner-concierge .wrapper {
+    @apply p-10 md:p-20 relative z-10 bg-gradient-dark-blue;
+}
+
+.banner-concierge .banner-content {
+    @apply w-full sm:w-col-10 lg:w-col-8 text-white;
 }
 
 
@@ -839,7 +866,7 @@ body {
     @apply w-auto sm:w-full;
 }
 .blog-block a p {
-    @apply text-base md:text-lg inline-block p-5 bg-red-300;
+    @apply text-base md:text-lg inline-block p-5;
 }
 
 
@@ -920,4 +947,74 @@ body {
 
 
 
-/* ===== ADAPTAÇÕES MOBILE */
+/* ===== PAINEL DO USUARIO */
+
+
+/* filtro da listagem */
+
+.user-lista-filter {
+    @apply flex flex-wrap items-center justify-between pb-10;
+}
+.user-lista-filter h2 {
+    @apply text-xl font-semibold;
+}
+
+
+/* listagem */
+.user-list-header > span {
+    @apply font-bold;
+}
+
+
+.user-list-table {
+    @apply bg-white shadow-lg rounded-lg  mb-10;
+}
+
+.user-list-table ul li:nth-child(odd) {
+    @apply bg-gray-100;
+}
+.user-list-table ul li {
+    @apply flex items-center px-5 py-2 text-base;
+    @apply hover:bg-ftem_b1 hover:text-white transition ease-in-out;
+}
+
+.user-list-header {
+    @apply flex items-center py-5 px-5;
+}
+
+.user-list-footer {
+    @apply h-16;
+}
+
+
+/* formulario de configuração do perfil */
+
+.user-config {
+    @apply bg-white shadow-lg rounded-lg;
+}
+
+
+/* bloco de cadastro de imagem input:file */
+
+.user-config-avatar {
+    @apply w-[200px];
+}
+
+.user-config-avatar > fieldset {
+    @apply relative;
+}
+.user-config-avatar input {
+    @apply absolute opacity-5;
+}
+.user-config-avatar label {
+    @apply bg-gray-200 inline-block w-full pb-[100%] border-gray-400 border-4 border-dashed overflow-hidden rounded-xl cursor-pointer;
+    @apply transition ease-in-out hover:border-ftem_b2;
+}
+.user-config-avatar p {
+    @apply text-base font-semibold pb-2;
+}
+
+
+.user-config-form {
+    @apply w-[calc(100%-200px)] pl-10;
+}
