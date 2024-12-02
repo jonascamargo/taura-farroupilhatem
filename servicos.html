@@ -57,58 +57,79 @@
 
             <!-- side-bar de filtro -->
             <aside class="w-full md:w-col-3">
+                <!-- <div class="filter-box open"> -->
+                <div class="filter-box">
 
-                <div class="servico-filtro">
-                    <p class="text-xl font-semibold mb-3">Categorias</p>
-
-                    <div class="filtro-lista">
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Criação</span>
-                        </label>
-    
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Texto</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Programação</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
+                    <div class="filter-header">
+                        <div class="filter-group">
                             <span>Aulas</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="servico-filtro">
-                    <p class="text-xl font-semibold mb-3">Localização</p>
-
-                    <div class="filtro-lista">
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
                             <span>Farroupilha</span>
-                        </label>
+                        </div>
     
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Garibaldi</span>
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="Categorias" id="">
-                            <span>Bento Gonçalves</span>
-                        </label>
+                        <div class="filter-buttom">
+                            <i class="fa-solid fa-chevron-up"></i>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <button class="btn-sm-blue">Filtar <i class="fa-solid fa-list-check ml-3"></i></button>
-                </div>
+                    <!-- /// -->
 
+                    <div class="filter-form">
+                        <form action="">
+                            <div class="servico-filtro">
+                                <p class="text-xl font-semibold mb-3">Categorias</p>
+
+                                <div class="filtro-lista">
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="">
+                                        <span>Criação</span>
+                                    </label>
+                
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="">
+                                        <span>Texto</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="">
+                                        <span>Programação</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="" checked>
+                                        <span>Aulas</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="servico-filtro">
+                                <p class="text-xl font-semibold mb-3">Localização</p>
+
+                                <div class="filtro-lista">
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="" checked>
+                                        <span>Farroupilha</span>
+                                    </label>
+                
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="">
+                                        <span>Garibaldi</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="Categorias" id="">
+                                        <span>Bento Gonçalves</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button class="btn-sm-blue">Filtar <i class="fa-solid fa-list-check ml-3"></i></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
             </aside>
 
 
@@ -343,12 +364,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->
@@ -358,7 +379,7 @@
 
                         <fieldset>
                             <label for="cadastro-confirmar">Confirme sua senha</label>
-                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar">
+                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar" data-confirm="cadastro-senha" required>
                         </fieldset>
                         
                         
@@ -402,12 +423,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->

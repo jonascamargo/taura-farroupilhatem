@@ -387,12 +387,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->
@@ -402,7 +402,7 @@
 
                         <fieldset>
                             <label for="cadastro-confirmar">Confirme sua senha</label>
-                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar">
+                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar" data-confirm="cadastro-senha" required>
                         </fieldset>
                         
                         
@@ -446,12 +446,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->
@@ -481,19 +481,19 @@
         <!-- confirmação -->
         <div class="modal" id="mdl-confirmar">
 
-        <div class="modal-content">
-            <h2>Deseja apagar serviço?</h2>
+            <div class="modal-content">
+                <h2>Deseja apagar serviço?</h2>
 
-            <p class="msg">
-                <span>Titulo do serviço</span>
-                <span>25 Set 2024</span>
-            </p>
+                <p class="msg">
+                    <span>Titulo do serviço</span>
+                    <span>25 Set 2024</span>
+                </p>
 
-            <div class="action-box">
-                <button class="btn-sm-gray">Confirmar</button>
-                <button class="btn-sm-blue">Cancelar</button>
+                <div class="action-box">
+                    <button class="btn-sm-gray">Confirmar</button>
+                    <button class="btn-sm-blue">Cancelar</button>
+                </div>
             </div>
-        </div>
 
         </div>
 

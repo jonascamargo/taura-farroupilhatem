@@ -6,11 +6,16 @@
 
     <title>FarroupilhaTem</title>
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/favicon.png">
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="./assets/js/main-script.js" defer></script>
 </head>
 
@@ -56,7 +61,59 @@
     <main>
 
         <!-- slider hero -->
-        <section class="bg-green-300 px-10 px-3"></section>
+        <section class="px-3 py-28 pb-10">
+            <div class="hero-swiper">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="flex flex-wrap items-center">
+                            <div class="info">
+                                <h2 class="title-xl">
+                                    Maximize Seu Tempo e Negócios
+                                </h2>
+
+                                <p class="text-lg font-semibold mt-10">
+                                    Otimize seu tempo e potencialize seus negócios com nossa 
+                                    concierge personalizada. Deixe o estresse conosco e 
+                                    foque no que realmente importa!
+                                </p>
+                            </div>
+
+                            <figure class="img">
+                                <img src="./assets/imgs/hero-slide-img01.png" alt="Imagem 01" class="w-full">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="flex flex-wrap items-center">
+                            <div class="info">
+                                <h2 class="title-xl">
+                                    Contato direto com profissionais selecionados!
+                                </h2>
+
+                                <p class="text-lg font-semibold mt-10">
+                                    Otimize seu tempo e potencialize seus negócios com nossa 
+                                    concierge personalizada. Deixe o estresse conosco e 
+                                    foque no que realmente importa!
+                                </p>
+                            </div>
+
+                            <figure class="img">
+                                <img src="./assets/imgs/hero-slide-img02.png" alt="Imagem 02" class="w-full">
+                            </figure>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="relative pt-10">
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>
 
 
         <!-- area de destaque para o serviço de concierge -->
@@ -333,19 +390,57 @@
         </section>
 
 
-        <!-- FINALIZAR -->
-        <!-- slider de depoimentos -->
-        <section class="home-depoimentos bg-ftem_bl2 px-3 py-28">
-            <div class="max-w-screen-lg mx-auto">
+        <!-- area SLIDER DE DEPOIMENTOS -->
+        <section class="bg-ftem_bl2 px-3 py-28">
+            <div class="depoimentos-slide overflow-hidden max-w-screen-lg mx-auto">
 
-                <div class="slider">
+                <div class="swiper-wrapper">
 
-                    <div class="overflow-hidden rounded-md bg-white flex flex-wrap items-stretch">
-                        <div class="w-full md:w-2/5 h-96 md:h-auto bg-no-repeat bg-cover" style="background-image:url(./assets/imgs/home-depo-img01.png);">
-                            <img src="./assets/imgs/home-depo-img01.png" alt="IMAGEM" class="hidden">
+                    <div class="swiper-slide">
+                        <div class="img" style="background-image:url(./assets/imgs/home-depo-img01.png);">
+                            <!-- <img src="./assets/imgs/home-depo-img01.png" alt="IMAGEM"> -->
                         </div>
 
-                        <div class="w-full md:w-3/5 p-5 sm:p-16">
+                        <div class="info">
+                            <figure>
+                                <img src="" alt="logo da empresa">
+                            </figure>
+
+                            <p class="text-lg font-semibold my-10">
+                                “Sendo uma marca pequena, mas crescente, definitivamente temos que 
+                                fazer muito mais com menos. E quando você quer criar um negócio 
+                                maior do que você, você vai precisar de ajuda”
+                            </p>
+
+                            <p class="text-lg font-semibold">Brandon & Rivera</p>
+                            <p class="text-sm">Co-founder of Creener</p>
+                        </div>
+                    </div>
+                    
+
+                    <!-- REMOVER///REMOVER///REMOVER///REMOVER/// -->
+                    <div class="swiper-slide">
+                        <div class="img" style="background-image:url(./assets/imgs/concierge-img01.png);"></div>
+
+                        <div class="info">
+                            <figure>
+                                <img src="" alt="logo da empresa">
+                            </figure>
+
+                            <p class="text-lg font-semibold my-10">
+                                “Sendo uma marca pequena, mas crescente, definitivamente temos que 
+                                fazer muito mais com menos. E quando você quer criar um negócio 
+                                maior do que você, você vai precisar de ajuda”
+                            </p>
+
+                            <p class="text-lg font-semibold">Brandon & Rivera</p>
+                            <p class="text-sm">Co-founder of Creener</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img" style="background-image:url(./assets/imgs/sobre-hero-img01.png);"></div>
+
+                        <div class="info">
                             <figure>
                                 <img src="" alt="logo da empresa">
                             </figure>
@@ -363,8 +458,13 @@
 
                 </div>
 
+                <div class="relative pt-10">
+                    <div class="swiper-pagination"></div>
+                </div>
+
             </div>
         </section>
+
 
     </main>
     
@@ -468,12 +568,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->
@@ -483,7 +583,7 @@
 
                         <fieldset>
                             <label for="cadastro-confirmar">Confirme sua senha</label>
-                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar">
+                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar" data-confirm="cadastro-senha" required>
                         </fieldset>
                         
                         
@@ -527,12 +627,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->

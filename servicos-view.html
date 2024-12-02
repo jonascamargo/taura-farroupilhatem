@@ -147,13 +147,10 @@
                         <div class="action-box-r mt-10">
                             <a href="servicos.html" class="link"><i class="fa-solid fa-arrow-left"></i>VOLTAR</a>
                             
-                            <!-- 
-                            só pode entrar em contato quando estiver logado
-                            SIM - aparece modal de formulario
-                            NAO - campo para login
-                            -->
+                            <!-- se nao estiver logado -->
                             <a href="#modal" class="btn-sm-blue" data-modal="mdl-login">Entrar em Contato (nao logado)</a>
-                            <a href="#modal" class="btn-sm-blue" data-modal="mdl-contato">Entrar em Contato (logado)</a>
+                            <!-- se estiver logado -->
+                            <a href="user-chat.html" class="btn-sm-blue">Entrar em Contato</a>
                         </div>
                     </div>
                 </div>
@@ -241,9 +238,6 @@
 
     <!-- MODAL -->
     <div class="modal-stage">
-        <!-- formulario de contato para o serviço -->
-        <div class="modal" id="mdl-contato">formulario de contato</div>
-
         <!-- formulario de cadastro -->
         <div class="modal" id="mdl-cadastro">
 
@@ -266,12 +260,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->
@@ -281,7 +275,7 @@
 
                         <fieldset>
                             <label for="cadastro-confirmar">Confirme sua senha</label>
-                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar">
+                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar" data-confirm="cadastro-senha" required>
                         </fieldset>
                         
                         
@@ -325,12 +319,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->

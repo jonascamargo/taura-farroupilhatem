@@ -63,7 +63,7 @@
         </header>
 
 
-        <section class="contato-forms px-3 pt-10">
+        <section class="contato-forms px-3 pt-10 pb-28">
             <div class="content flex flex-wrap">
 
                 <!-- formularios -->
@@ -80,13 +80,13 @@
                                 <form action="" class="form">
                                     <fieldset>
                                         <label for="mensagem-nome">Nome</label>
-                                        <input type="text" name="mensagem-nome" id="mensagem-nome">
+                                        <input type="text" name="mensagem-nome" id="mensagem-nome" required>
                                     </fieldset>
 
                                     <div class="form-colum">
                                         <fieldset>
                                             <label for="mensagem-email">E-mail</label>
-                                            <input type="email" name="mensagem-email" id="mensagem-email">
+                                            <input type="email" name="mensagem-email" id="mensagem-email" required>
                                         </fieldset>
         
                                         <fieldset>
@@ -97,7 +97,7 @@
 
                                     <fieldset>
                                         <label for="mensagem-mensagem">Mensagem</label>
-                                        <textarea name="mensagem-mensagem" id="mensagem-mensagem"></textarea>
+                                        <textarea name="mensagem-mensagem" id="mensagem-mensagem" required></textarea>
                                     </fieldset>
 
                                     <div class="action-box">
@@ -110,13 +110,13 @@
                                 <form action="" class="form">
                                     <fieldset>
                                         <label for="mensagem-nome">Nome</label>
-                                        <input type="text" name="mensagem-nome" id="mensagem-nome">
+                                        <input type="text" name="mensagem-nome" id="mensagem-nome" required>
                                     </fieldset>
 
                                     <div class="form-colum">
                                         <fieldset>
                                             <label for="mensagem-email">E-mail</label>
-                                            <input type="email" name="mensagem-email" id="mensagem-email">
+                                            <input type="email" name="mensagem-email" id="mensagem-email" required>
                                         </fieldset>
         
                                         <fieldset>
@@ -128,7 +128,7 @@
                                     <fieldset>
                                         <label for="mensagem-curriculo">Curriculo</label>
                                         <div class="input-file">
-                                            <input type="file" name="mensagem-curriculo" id="mensagem-curriculo">
+                                            <input type="file" name="mensagem-curriculo" id="mensagem-curriculo" required>
                                         </div>
                                     </fieldset>
 
@@ -183,7 +183,8 @@
         </section>
         
 
-        <section class="map-frame px-3 py-28">
+        <!--  -->
+        <section class="map-frame px-3 pb-28">
             <div class="content overflow-hidden rounded-md shadow-md">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6963.785929614081!2d-51.352247653489584!3d-29.2267027013819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c1e281187426d%3A0x61eab303946f7e0e!2sCentro%2C%20Farroupilha%20-%20RS%2C%2095180-000!5e0!3m2!1spt-BR!2sbr!4v1732205550319!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
         </section>
@@ -290,12 +291,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->
@@ -305,7 +306,7 @@
 
                         <fieldset>
                             <label for="cadastro-confirmar">Confirme sua senha</label>
-                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar">
+                            <input type="password" for="cadastro-confirmar" id="cadastro-confirmar" data-confirm="cadastro-senha" required>
                         </fieldset>
                         
                         
@@ -349,12 +350,12 @@
                     <form action="">
                         <fieldset>
                             <label for="cadastro-nome">E-mail</label>
-                            <input type="text" name="cadastro-nome" id="cadastro-nome">
+                            <input type="email" name="cadastro-nome" id="cadastro-nome" required>
                         </fieldset>
 
                         <fieldset>
                             <label for="cadastro-senha">Senha</label>
-                            <input type="password" name="cadastro-senha" id="cadastro-senha">
+                            <input type="password" name="cadastro-senha" id="cadastro-senha" required>
 
                             <!-- <span class="input-show-pass">
                                 <i class="fa-regular fa-eye"></i> -->

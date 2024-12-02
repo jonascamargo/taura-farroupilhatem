@@ -34,6 +34,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-dark-blue': 'linear-gradient(90deg, rgba(16,79,158,1) 35%, rgba(16,79,158,0) 99%)',
+        'gradient-dark-blue-up': 'linear-gradient(0deg, rgba(16,79,158,1) 35%, rgba(16,79,158,0) 99%)',
         'gradient-lite-blue': 'linear-gradient(90deg, #B6C9E1 0%, #EFF8FD 100%)',
         none: 'none',
       },
