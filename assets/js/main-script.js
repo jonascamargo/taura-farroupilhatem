@@ -70,7 +70,7 @@ const modalOpen = ((e) => {
     const id    = e.dataset.modal,
           modal = document.querySelector( '#'+id )
     
-    console.log( 'abrir' )
+    // console.log( 'abrir' )
     
     body.classList.add('modalOpening')
     // expoe o container do modal
@@ -194,23 +194,29 @@ document.addEventListener('submit', (event) => {
 
 // ////////// SLIDERs
 
-const swiper = new Swiper('.depoimentos-slide', {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 50,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    },
-})
+const swiperWrapper = document.querySelectorAll('.swiper-wrapper');
+
+if( swiperWrapper.length > 0 ){
+
+    const swiper = new Swiper('.depoimentos-slide', {
+        loop: true,
+        grabCursor: true,
+        spaceBetween: 50,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+    })
 
 
-const heroSwiper = new Swiper('.hero-swiper', {
-    effect: "fade",
-    slidesPerView: 1,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    },
-})
+    const heroSwiper = new Swiper('.hero-swiper', {
+        effect: "fade",
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+    })
+
+}

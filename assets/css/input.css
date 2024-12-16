@@ -1060,6 +1060,53 @@ body {
 
 /* ===== PAINEL DO USUARIO */
 
+.user-wrapper {
+    @apply bg-ftem_g1 pl-[60px] lg:pl-[260px];
+}
+
+.user-sidebar {
+    /* @apply fixed z-10 left-0 top-0 h-screen w-full max-w-[260px] overflow-y-auto bg-white shadow-lg; */
+    @apply fixed z-10 left-0 top-0 h-screen w-full max-w-[60px] lg:max-w-[260px] overflow-y-auto bg-white shadow-lg;
+}
+
+.user-body {
+    @apply w-col-11 lg:w-col-10 max-w-full lg:max-w-screen-lg mx-auto pt-5 pb-10;
+}
+
+
+.user-logoftem {
+    @apply block mb-7;
+}
+.user-logoftem .img1 {
+    @apply hidden lg:block;
+}
+.user-logoftem .img2 {
+    @apply w-16 block lg:hidden;
+}
+
+.btn-sm-blue.novo-cadastro {
+    @apply mb-7 px-4 lg:px-[1rem];
+}
+.btn-sm-blue.novo-cadastro span {
+    @apply hidden lg:block;
+}
+.btn-sm-blue.novo-cadastro i {
+    @apply block lg:hidden;
+}
+
+
+.user-mainmenu a {
+    @apply text-lg font-semibold text-ftem_b2 flex items-center justify-center lg:justify-normal gap-3 mb-2;
+    @apply hover:text-ftem_b1;
+}
+.user-mainmenu a i {
+    @apply text-2xl lg:text-lg;
+}
+.user-mainmenu a span {
+    @apply hidden lg:block;
+}
+
+
 
 /* filtro da listagem */
 
@@ -1072,25 +1119,45 @@ body {
 
 
 /* listagem */
+.user-list-header {
+    @apply flex items-center px-4 py-5;
+}
+
 .user-list-header > span {
     @apply font-bold;
 }
-
+.user-list-header > span:not(:first-child) {
+    @apply pl-2;
+}
 
 .user-list-table {
     @apply bg-white shadow-lg rounded-lg  mb-10;
+}
+
+
+.user-list-table ul {
+    @apply overflow-y-auto max-h-[330px];
+    scroll-snap-type: y mandatory;
 }
 
 .user-list-table ul li:nth-child(odd) {
     @apply bg-gray-100;
 }
 .user-list-table ul li {
-    @apply flex items-center px-5 py-2 text-base;
+    @apply flex items-center relative text-base px-3;
     @apply hover:bg-ftem_b1 hover:text-white transition ease-in-out;
+    height: 48px;
+    scroll-snap-align: start;
+}
+.user-list-table ul li.up:before {
+    @apply content-[""] w-1 h-full bg-yellow-300 absolute left-0 top-0;
 }
 
-.user-list-header {
-    @apply flex items-center py-5 px-5;
+.user-list-table ul li > * {
+    @apply whitespace-nowrap overflow-hidden text-ellipsis py-3;
+}
+.user-list-table ul li > *:not(:first-child) {
+    @apply pl-2;
 }
 
 .user-list-footer {
@@ -1107,25 +1174,52 @@ body {
 
 /* bloco de cadastro de imagem input:file */
 
-.user-config-avatar {
-    @apply w-[200px];
+.input-img {
+    @apply relative overflow-hidden;
+
+    margin-bottom: 0 !important;
 }
 
-.user-config-avatar > fieldset {
-    @apply relative;
+.input-img input {
+    @apply absolute left-0 border-none opacity-0 pointer-events-none;
+
+    padding: 0 !important;
 }
-.user-config-avatar input {
-    @apply absolute opacity-5;
-}
-.user-config-avatar label {
-    @apply bg-gray-200 inline-block w-full pb-[100%] border-gray-400 border-4 border-dashed overflow-hidden rounded-xl cursor-pointer;
+
+.input-img label {
+    @apply relative bg-gray-200 inline-block w-full pb-[100%] border-gray-400 bg-[url(./../imgs/bg-img.svg)] bg-no-repeat bg-center border-4 border-dashed overflow-hidden rounded-xl cursor-pointer;
     @apply transition ease-in-out hover:border-ftem_b2;
+
+    margin-bottom: 0 !important;
+    background-size: 65%;
 }
-.user-config-avatar p {
+.user-config-avatar .input-img label {
+    background-image: url(./../imgs/bg-user.svg);
+}
+.input-img label.img-up {
+    @apply border-solid;
+}
+
+.input-img label img {
+    @apply absolute left-0 top-0;
+}
+
+.input-img p {
     @apply text-base font-semibold pb-2;
 }
 
 
-.user-config-form {
-    @apply w-[calc(100%-200px)] pl-10;
+
+/* formulario de cadastro/edição de serviço */
+
+.user-servico {
+    @apply bg-white shadow-lg rounded-lg;
+}
+
+.user-servico-imgs {
+    @apply flex flex-wrap gap-[1rem] mb-5;
+}
+
+.user-servico-imgs .input-img {
+    @apply w-full md:w-[calc(50%-0.60rem)] xl:w-[calc(33.3333%-0.7rem)];
 }
