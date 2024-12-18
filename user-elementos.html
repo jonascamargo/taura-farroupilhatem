@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarroupilhaTem</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="./assets/imgs/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/imgs/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/imgs/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/imgs/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Farroupilha Tem" />
+    <link rel="manifest" href="./assets/imgs/site.webmanifest" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JS -->
+    <!-- <script src="./assets/js/main-script.js" defer></script> -->
+</head>
+
+
+<body>
+
+    <main class="user-wrapper">
+
+        <div class="user-sidebar">
+
+            <aside class="w-full p-2 lg:p-5">
+
+                <a href="index.html" class="user-logoftem">
+                    <img src="./assets/imgs/farrTem-logo.png" alt="FarroupilhaTem" class="img1">
+                    <img src="./assets/imgs/farrTem-logo-signo.png" alt="FarroupilhaTem" class="img2">
+                </a>
+
+                <a href="" class="btn-sm-blue novo-cadastro">
+                    <span>+ Novo Serviço</span>
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+
+                <nav class="user-mainmenu">
+                    <a href="./user-dashboard.html">
+                        <i class="fa-solid fa-table-columns"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="./user-perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Perfil</span>
+                    </a>
+
+                    <a href="./index.html">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Saír</span>
+                    </a>
+                </nav>
+
+            </aside>
+
+        </div>
+
+
+        <section class="user-body">
+
+            <div class="notify flex flex-wrap gap-5 mb-10">
+
+                <div class="not-item count-servico p-5 bg-white rounded-md shadow-lg flex items-center min-w-[240px]">
+                    <i class="fa-solid fa-briefcase text-red-700 text-2xl bg-red-200 p-4 rounded-full"></i>
+                    
+                    <p class="pl-5">
+                        <em class="count block text-3xl font-bold">15</em>
+                        <i class="text-sm text-gray-400 font-semibold">Serviços</i>
+                    </p>
+                </div>
+
+                <div class="not-item count-msg p-5 bg-white rounded-md shadow-lg flex items-center min-w-[240px]">
+                    <i class="fa-solid fa-briefcase text-yellow-700 text-2xl bg-yellow-200 p-4 rounded-full"></i>
+                    
+                    <p class="pl-5">
+                        <em class="count block text-3xl font-bold">1</em>
+                        <i class="text-sm text-gray-400 font-semibold">Mesagem</i>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- lista de serviços cadastrados -->
+            <div class="user-lista">
+
+                <div class="user-lista-filter">
+                    <h2>Lista de serviços</h2>
+
+                    <fieldset>
+                        <label for="servicos-lista">Filtrar por: </label>
+
+                        <select name="servicos-lista" id="servicos-lista">
+                            <option value="0">Todos</option>
+                            <option value="1">Mais antigos</option>
+                            <option value="2">Ultimos cadastrados</option>
+                        </select>
+                    </fieldset>
+                </div>
+
+                <div class="user-list-table">
+                    <div class="user-list-header">
+                        <span class="w-col-6">Titulo</span>
+                        <span class="w-col-3">Status</span>
+                        <span class="w-col-3">Publicado</span>
+                        <span class="w-col-1"></span>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <a href="user-servico-view.html" class="w-col-6">Ilustração editorial</a>
+                            <span class="w-col-3">Oculto</span>
+                            <span class="w-col-3">25 Set 2024</span>
+                            <button class="w-col-1"><i class="fa-solid fa-trash-can"></i></button>
+                        </li>
+
+                        <li class="up">
+                            <a href="user-servico-view.html" class="w-col-6">Ilustração editorial</a>
+                            <span class="w-col-3">Publico</span>
+                            <span class="w-col-3">25 Set 2024</span>
+                            <button class="w-col-1"><i class="fa-solid fa-trash-can"></i></button>
+                        </li>
+                        <li class="up">
+                            <a href="user-servico-view.html" class="w-col-6">Ilustração editorial</a>
+                            <span class="w-col-3">Publico</span>
+                            <span class="w-col-3">25 Set 2024</span>
+                            <button class="w-col-1"><i class="fa-solid fa-trash-can"></i></button>
+                        </li>
+                    </ul>
+
+                    <div class="user-list-footer"></div>
+                </div>
+
+            </div>
+
+
+            <!-- lista de mensagens recebidas -->
+            <div class="user-lista">
+
+                <div class="user-lista-filter">
+                    <h2>Mensagens</h2>
+
+                    <fieldset>
+                        <label for="servicos-lista">Filtrar por: </label>
+
+                        <select name="servicos-lista" id="servicos-lista">
+                            <option value="0">Todos</option>
+                            <option value="1">Mais antigos</option>
+                            <option value="2">Ultimos cadastrados</option>
+                        </select>
+                    </fieldset>
+                </div>
+
+                <div class="user-list-table">
+                    <div class="user-list-header">
+                        <span class="w-col-7">Mensagem</span>
+                        <span class="w-col-3">Serviço</span>
+                        <span class="w-col-2">Cliente</span>
+                    </div>
+
+                    <ul>
+                        <!-- a classe UP indica nova mensagem -->
+                        <li class="up">
+                            <a href="user-mensagem-view.html" class="w-col-7">Preciso de ilustração para jorn Preciso de ilustração para jorn Preciso de ilustração para jorn</a>
+
+                            <a href="user-servico-view.html" class="w-col-3">Ilustração editorial</a>
+
+                            <span class="w-col-2">João P.</span>
+                        </li>
+
+                        <li>
+                            <a href="user-mensagem-view.html" class="w-col-7">Preciso de ilustração para jorn</a>
+
+                            <a href="user-servico-view.html" class="w-col-3">Ilustração editorial</a>
+
+                            <span class="w-col-2">João P.</span>
+                        </li>
+                        <li>
+                            <a href="user-mensagem-view.html" class="w-col-7">Preciso de ilustração para jorn</a>
+
+                            <a href="user-servico-view.html" class="w-col-3">Ilustração editorial</a>
+
+                            <span class="w-col-2">João P.</span>
+                        </li>
+                    </ul>
+
+                    <div class="user-list-footer"></div>
+                </div>
+
+            </div>
+
+
+            <!-- configuração do perfil -->
+            <div class="user-config">
+            
+                <div class="flex flex-wrap p-8">
+                    
+                    <div class="user-config-avatar w-full sm:w-col-3 lg:w-col-3">
+                        <fieldset class="input-img">
+                            <p>Foto</p>
+
+                            <!-- quando ja tiver uma imagem cadastrada adicionar a classe "img-up" -->
+                            <label for="user-config-avatar" class="img-up">
+                                <img src="./upload/home-sobre-img01.png" alt="Avatar do usuário">
+                            </label>
+
+                            <input type="file" name="user-config-avatar" id="user-config-avatar">
+                        </fieldset>
+                    </div>
+
+                    <div class="user-config-form w-full form sm:w-col-9 lg:w-col-9 pl-0 sm:pl-10">
+                        
+                        <fieldset>
+                            <label for="">Nome</label>
+                            <input type="text" name="" id="">
+                        </fieldset>
+
+                        <div class="form-colum">
+                            <fieldset>
+                                <label for="">E-mail</label>
+                                <input type="text" name="" id="">
+                            </fieldset>
+
+                            <fieldset>
+                                <label for="">Telefone</label>
+                                <input type="email" name="" id="">
+                            </fieldset>
+                        </div>
+
+                        <fieldset>
+                            <label for="">Endereço</label>
+                            <input type="tel" name="" id="">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="">Bio</label>
+                            <textarea name="" id=""></textarea>
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="">Tags <span>separadas por virgula**</span></label>
+                            <textarea name="" id=""></textarea>
+                        </fieldset>
+
+                        <div class="action-box">
+                            <a href="" class="btn-sm-blue">Salvar</a>
+                            <a href="" class="btn-sm-gray">Excluir Perfil</a>
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                <!-- substituir esta estruturando quando usuario clicar em "solicitar" -->
+                <div class="flex justify-between items-center p-8 border-t-2">
+                    <p class="text-base font-semibold pr-6">Deseja se tornar colaborador e oferecer seus serviços no site?</p>
+                    
+                    <a href="" class="btn-sm-blue">Solicitar</a>
+                </div>
+
+                <!-- remover esta estrutura quando o usuario for aprovado -->
+                <div class="flex flex-wrap justify-between items-center p-8 border-t-2">
+                    <p class="text-base font-semibold">Aguardando aprovação</p>
+                </div>
+
+            </div>
+
+
+            <!-- cadastro de um novo serviço -->
+            <div class="user-servico form">
+                <div class="flex flex-wrap p-8">
+
+                    <div class="w-full sm:w-col-3 lg:w-col-3">
+                        <fieldset class="input-img">
+                            <p>Imagem</p>
+
+                            <label for="servico-img-thumb">
+                                <img src="" alt="">
+                            </label>
+
+                            <input type="file" name="servico-img-thumb" id="servico-img-thumb">
+                        </fieldset>
+                    </div>
+                    
+                    <div class="w-full form sm:w-col-9 lg:w-col-9 pl-0 sm:pl-10">
+                        <fieldset>
+                            <label for="">Titulo</label>
+                            <input type="text" name="" id="">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="">Disponibilidade</label>
+                            <input type="text" name="" id="">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="">E-mail</label>
+                            <input type="email" name="" id="">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="">Tags</label>
+                            <textarea name="" id=""></textarea>
+                        </fieldset>
+                    </div>
+
+                </div>
+                
+                <div class="border-t-2 p-8">
+
+                    <fieldset>
+                        <label for="">Descrição</label>
+                        <textarea name="" id=""></textarea>
+                    </fieldset>
+
+                    <div class="user-servico-imgs">
+                        <fieldset class="input-img">
+                            <label for="servico-img-01">
+                                <img src="" alt="">
+                            </label>
+
+                            <input type="file" name="servico-img-01" id="servico-img-01">
+                        </fieldset>
+
+                        <fieldset class="input-img">
+                            <label for="servico-img-02">
+                                <img src="" alt="">
+                            </label>
+
+                            <input type="file" name="servico-img-02" id="servico-img-02">
+                        </fieldset>
+
+                        <fieldset class="input-img">
+                            <label for="servico-img-03">
+                                <img src="" alt="">
+                            </label>
+
+                            <input type="file" name="servico-img-03" id="servico-img-03">
+                        </fieldset>
+                    </div>
+
+                    <fieldset>
+                        <label for="">Diferencial</label>
+                        <textarea name="" id=""></textarea>
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+</body>
+</html>

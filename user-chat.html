@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarroupilhaTem</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="./assets/imgs/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/imgs/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/imgs/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/imgs/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Farroupilha Tem" />
+    <link rel="manifest" href="./assets/imgs/site.webmanifest" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JS -->
+    <!-- <script src="./assets/js/main-script.js" defer></script> -->
+</head>
+
+
+<body>
+
+    <main class="user-wrapper">
+
+        <div class="user-sidebar">
+
+            <aside class="w-full p-2 lg:p-5">
+
+                <a href="index.html" class="user-logoftem">
+                    <img src="./assets/imgs/farrTem-logo.png" alt="FarroupilhaTem" class="img1">
+                    <img src="./assets/imgs/farrTem-logo-signo.png" alt="FarroupilhaTem" class="img2">
+                </a>
+
+                <a href="./user-servico.html" class="btn-sm-blue novo-cadastro">
+                    <span>+ Novo Serviço</span>
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+
+                <nav class="user-mainmenu">
+                    <a href="./user-dashboard.html">
+                        <i class="fa-solid fa-table-columns"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="./user-perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Perfil</span>
+                    </a>
+
+                    <a href="./index.html">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Saír</span>
+                    </a>
+                </nav>
+
+            </aside>
+
+        </div>
+
+
+        <section class="user-body">
+            
+            <div class="user-chat">
+
+                <div class="bg-white shadow-lg rounded-lg p-5 flex items-center gap-5">
+                    <figure class="overflow-hidden rounded-lg w-20 h-20 bg-ftem_b2 hidden sm:block">
+                        <img src="./upload/sobre-img02.png" alt="">
+                    </figure>
+
+                    <div>
+                        <a href="./servicos-view.html" class="title-sm text-gray-7 py-2">Ilustração editorial</a>
+                    </div>
+                </div>
+
+                <div class="chat-content bg-white shadow-lg rounded-lg mt-10">
+
+                    <div class="chat-header p-5 border-b">
+                        <span class="text-sm text-gray-400">Contato com:</span>
+                        <div class="title-sm text-gray-700">Joãozinho da Silva</div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <div class="chat-received">
+                            <p>Ola bom dia!</p>
+                            <p>gostaria de um orçamento</p>
+
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae fugit officiis voluptatibus quisquam earum facere iure laborum culpa rem voluptatum nihil corrupti dicta, sed nesciunt fugiat delectus necessitatibus numquam nobis.</p>
+                        </div>
+
+                        <div class="chat-send">
+                            <p>Claro!</p>
+                            <p>Pode me passar mais detalhes sobre o que você precisa</p>
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam perspiciatis ad laborum harum alias dignissimos culpa saepe et accusantium, molestias ratione rerum exercitationem officiis, excepturi fugiat autem vel itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa autem, reprehenderit minus provident laborum mollitia quaerat et error possimus accusantium ipsa ipsum dicta! Necessitatibus ipsam molestias expedita quis eos?</p>
+                        </div>
+                    </div>
+
+                    <div class="chat-textarea">
+                        <textarea name="user-message-chat" id="user-message-chat" maxlength="300"></textarea>
+                        <button type="submit" class="btn-sm-white"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+</body>
+</html>

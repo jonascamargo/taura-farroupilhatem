@@ -1061,7 +1061,7 @@ body {
 /* ===== PAINEL DO USUARIO */
 
 .user-wrapper {
-    @apply bg-ftem_g1 pl-[60px] lg:pl-[260px];
+    @apply bg-ftem_g1 pl-[60px] lg:pl-[260px] min-h-screen;
 }
 
 .user-sidebar {
@@ -1196,8 +1196,8 @@ body {
 .user-config-avatar .input-img label {
     background-image: url(./../imgs/bg-user.svg);
 }
-.input-img label.img-up {
-    @apply border-solid;
+.input-img.up label {
+    border-style: solid;
 }
 
 .input-img label img {
@@ -1222,4 +1222,45 @@ body {
 
 .user-servico-imgs .input-img {
     @apply w-full md:w-[calc(50%-0.60rem)] xl:w-[calc(33.3333%-0.7rem)];
+}
+
+
+
+/* ----- chat de contato */
+.chat-textarea {
+    @apply p-5 pr-2 flex;
+}
+
+.chat-textarea textarea {
+    @apply w-[calc(100%-80px)] min-h-20 max-h-20 resize-none overflow-y-auto p-2 outline-none border-2 rounded-md;
+    @apply focus:border-ftem_b2 transition ease-in-out;
+}
+
+.chat-textarea button {
+    @apply w-[80px];
+}
+.chat-textarea button i {
+    @apply text-3xl;
+}
+
+
+/* 105+120+120+40+20+40 */
+.chat-messages {
+    @apply min-h-56 h-[calc(100vh-500px)] px-5 overflow-y-auto;
+}
+
+.chat-received {
+    @apply py-2 pr-0 md:pr-[10%];
+}
+.chat-send {
+    @apply py-2 text-right pl-0 md:pl-[10%];
+}
+.chat-received:not(:last-child),
+.chat-send:not(:last-child) {
+    @apply mb-5;
+}
+
+.chat-received > p:not(:last-child),
+.chat-send  > p:not(:last-child) {
+    @apply mb-4;
 }
