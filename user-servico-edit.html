@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- JS -->
-    <!-- <script src="./assets/js/main-script.js" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="./assets/js/main-script.js" defer></script>
 </head>
 
 
@@ -69,14 +70,15 @@
                 <div class="flex flex-wrap p-8">
 
                     <div class="w-full sm:w-col-3 lg:w-col-3">
-                        <fieldset class="input-img up">
+                        <fieldset class="input-img">
                             <p>Imagem</p>
 
                             <label for="servico-img-thumb">
-                                <img src="./upload/sobre-img02.png" alt="">
+                                <button class="img-remover"><i class="fa-solid fa-circle-xmark"></i></button>
+                                <img src="" alt="">
                             </label>
 
-                            <input type="file" name="servico-img-thumb" id="servico-img-thumb">
+                            <input type="file" class="input-img-thumb" name="servico-img-thumb" id="servico-img-thumb">
                         </fieldset>
                     </div>
                     
@@ -108,44 +110,101 @@
 
                     <fieldset>
                         <label for="descricao-servico">Descrição</label>
-                        <textarea name="descricao-servico" id="descricao-servico"></textarea>
+                        
+                        <div class="textEditor">
+                            <div class="textEditor-menu">
+                                <div>
+                                    <button data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                                    <button data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                                    <button data-command="underline"><i class="fa-solid fa-underline"></i></button>
+                                </div>
+                                
+                                <div>
+                                    <button data-command="justifyLeft"><i class="fa-solid fa-align-left"></i></button>
+                                    <button data-command="justifyCenter"><i class="fa-solid fa-align-center"></i></button>
+                                    <button data-command="justifyRight"><i class="fa-solid fa-align-right"></i></button>
+                                </div>
+
+                                <div>
+                                    <button data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                                    <button data-command="insertOrderedList"><i class="fa-solid fa-list-ol"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="textEditor-input" contenteditable="true"></div>
+                            <!--
+                            como o conteudo do editor nao e reconhecido pela tag FORM
+                            quando o usuario tira o foco do campo de edição
+                            o conteudo é jogado para dentro da tag input:hidden para salvar
+                            -->
+                            <input type="hidden" name="servico-descricao">
+                        </div>
                     </fieldset>
 
                     <div class="user-servico-imgs">
-                        <fieldset class="input-img up">
+                        <fieldset class="input-img">
                             <label for="servico-img-01">
-                                <img src="./upload/sobre-img03.png" alt="">
+                                <button class="img-remover"><i class="fa-solid fa-circle-xmark"></i></button>
+                                <img src="" alt="">
                             </label>
 
-                            <input type="file" name="servico-img-01" id="servico-img-01">
+                            <input type="file" class="input-img-thumb" name="servico-img-01" id="servico-img-01">
                         </fieldset>
 
                         <fieldset class="input-img">
                             <label for="servico-img-02">
+                                <button class="img-remover"><i class="fa-solid fa-circle-xmark"></i></button>
                                 <img src="" alt="">
                             </label>
 
-                            <input type="file" name="servico-img-02" id="servico-img-02">
+                            <input type="file" class="input-img-thumb" name="servico-img-02" id="servico-img-02">
                         </fieldset>
 
                         <fieldset class="input-img">
                             <label for="servico-img-03">
+                                <button class="img-remover"><i class="fa-solid fa-circle-xmark"></i></button>
                                 <img src="" alt="">
                             </label>
 
-                            <input type="file" name="servico-img-03" id="servico-img-03">
+                            <input type="file" class="input-img-thumb" name="servico-img-03" id="servico-img-03">
                         </fieldset>
                     </div>
 
                     <fieldset>
                         <label for="">Diferencial</label>
-                        <textarea name="" id=""></textarea>
+                        
+                        <div class="textEditor">
+                            <div class="textEditor-menu">
+                                <div>
+                                    <button data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                                    <button data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                                    <button data-command="underline"><i class="fa-solid fa-underline"></i></button>
+                                </div>
+                                
+                                <div>
+                                    <button data-command="justifyLeft"><i class="fa-solid fa-align-left"></i></button>
+                                    <button data-command="justifyCenter"><i class="fa-solid fa-align-center"></i></button>
+                                    <button data-command="justifyRight"><i class="fa-solid fa-align-right"></i></button>
+                                </div>
+
+                                <div>
+                                    <button data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                                    <button data-command="insertOrderedList"><i class="fa-solid fa-list-ol"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="textEditor-input" contenteditable="true"></div>
+                            <input type="hidden" name="servico-diferencial">
+                        </div>
                     </fieldset>
 
                 </div>
-
+                
+                <div class="border-t-2 p-8 flex justify-end items-center gap-5">
+                    <a href="" class="btn-sm-gray" data-modal="excluir-servico">Excluir</a>
+                    <a href="" class="btn-sm-blue">Salvar</a>
+                </div>
             </div>
-
 
             <!-- lista de mensagens refente a este serviço -->
             <div class="user-lista mt-16">
@@ -198,6 +257,27 @@
         </section>
 
     </main>
+
+
+    <!-- MODAL -->
+    <div class="modal-stage">
+        
+        <!-- confirmar para excluir servico -->
+        <div class="modal bg-white p-5 max-w-screen-md" id="excluir-servico">
+
+            <p class="text-lg font-semibold mb-10">Realmente deseja excluir o serviço <em class="modal_nome_servico bg-ftem_b2 text-white px-3">serviço 001</em>?</p>
+
+            <div class="flex justify-end gap-5 w-full">
+                <button class="btn-sm-blue modal-close">Não</button>
+                <a href="" class="btn-sm-gray">Sim</a>
+            </div>
+
+        </div>
+
+
+        <span class="curtain"></span>
+        <i class="fa-solid fa-circle-xmark modalCloser"></i>
+    </div>
     
 </body>
 </html>

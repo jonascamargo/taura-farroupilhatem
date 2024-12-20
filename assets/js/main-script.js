@@ -13,8 +13,10 @@ const isScrolling = (() => {
     if( mainMenu.classList.contains('mobile') && mainMenu.classList.contains('open') ){ menuSandwich.click() }
 })
 
-window.addEventListener( 'scroll', isScrolling )
-isScrolling()
+if( mainMenu ){
+    window.addEventListener( 'scroll', isScrolling )
+    isScrolling()
+}
 
 
 
@@ -32,8 +34,10 @@ const isMobile = (() => {
     }
 })
 
-addEventListener( "resize", isMobile )
-isMobile()
+if( mainMenu ){
+    addEventListener( "resize", isMobile )
+    isMobile()
+}
 
 
 
@@ -65,74 +69,86 @@ const modalStage   = document.querySelector('.modal-stage')
 const modalCurtain = document.querySelector('.curtain')
 const modalCallers = document.querySelectorAll('[data-modal]')
 
-// --- abrindo
-const modalOpen = ((e) => {
-    const id    = e.dataset.modal,
-          modal = document.querySelector( '#'+id )
-    
-    // console.log( 'abrir' )
-    
-    body.classList.add('modalOpening')
-    // expoe o container do modal
-    modalStage.classList.add('show')
-    // prepara o modal pra animar
-    modal.classList.add('wait')
-    // Espera até o próximo ciclo de animação para exibir o modal
-    requestAnimationFrame(() => {
-        // Espera o tempo de delay para exibir a janela do modal
-        setTimeout(() => {
-            modal.classList.add('show')
-        }, 300)
+if( modalStage ){
+    // --- abrindo
+    const modalOpen = ((e) => {
+        const id    = e.dataset.modal,
+              modal = document.querySelector( '#'+id )
+        
+        // ação para modal -> EXCLUIR SERVIÇO
+        if( id === 'excluir-servico' ){
+            const field_title  = document.querySelector('#titulo-servico')
+            const id_servico   = e.dataset.idservico
+            const name_servico = (field_title) ? field_title.value : e.parentElement.querySelector('a')?.innerText
+
+            document.querySelector('.modal_nome_servico').textContent = name_servico
+        }
+        
+        body.classList.add('modalOpening')
+        // expoe o container do modal
+        modalStage.classList.add('show')
+        // prepara o modal pra animar
+        modal.classList.add('wait')
+        // Espera até o próximo ciclo de animação para exibir o modal
+        requestAnimationFrame(() => {
+            // Espera o tempo de delay para exibir a janela do modal
+            setTimeout(() => {
+                modal.classList.add('show')
+            }, 300)
+        })
     })
-})
 
-// --- fechando
-const modalClose = (() => {
-    const modal = document.querySelector('.modal.wait.show')
+    // --- fechando
+    const modalClose = (() => {
+        const modal = document.querySelector('.modal.wait.show')
 
-    body.classList.remove('modalOpening')
-    // animando a saida do modal
-    modal.classList.add('out')
-    // Espera até o próximo ciclo de animação limpar tudo
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            modal.classList.remove('wait', 'show', 'out')
-            modalStage.classList.remove('show')
-        }, 300)
+        body.classList.remove('modalOpening')
+        // animando a saida do modal
+        modal.classList.add('out')
+        // Espera até o próximo ciclo de animação limpar tudo
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                modal.classList.remove('wait', 'show', 'out')
+                modalStage.classList.remove('show')
+            }, 300)
+        })
     })
-})
 
-// --- adiciona evento para remover o modal
-modalCurtain.addEventListener('click', (e) => {
-    modalClose()
-})
+    // --- adiciona evento para remover o modal
+    modalCurtain.addEventListener('click', (e) => { modalClose() })
 
-modalCallers.forEach(btn => {
-    btn.addEventListener('click', function(e){
-        e.preventDefault()
+    modalCallers.forEach(btn => {
+        btn.addEventListener('click', function(e){
+            e.preventDefault()
 
-        modalOpen( e.currentTarget )
+            modalOpen( e.currentTarget )
+        })
     })
-})
 
-// --- botao pra fechar modal
-document.querySelector('.modalCloser').addEventListener('click', () => { modalClose() })
-// --- ESC para fechar modal
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && modalStage.classList.contains('show')) modalClose()
-});
+    // --- botao pra fechar modal
+    document.querySelector('.modalCloser').addEventListener('click', () => { modalClose() })
+    document.querySelector('.modal-close').addEventListener('click', () => { modalClose() })
+
+    // --- ESC para fechar modal
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modalStage.classList.contains('show')) modalClose()
+    })
+}
+
 
 // --- abre fecha menu mobile
-menuSandwich.addEventListener( 'click', () => { mainMenu.classList.toggle('open') } )
+if( mainMenu ){
+    menuSandwich.addEventListener( 'click', () => { mainMenu.classList.toggle('open') } )
+}
 
 
 
 
 // ////////// SERVIÇOS - FILTRO
 
-const filterBox = document.querySelector('.filter-box')
+const filterBox     = document.querySelector('.filter-box')
 const filterBtnOpen = document.querySelector('.filter-buttom')
-const filterList = document.querySelector('.filter-group')
+const filterList    = document.querySelector('.filter-group')
 
 // --- abre e fecha o filtro no mobile
 if( filterBtnOpen ){
@@ -208,7 +224,6 @@ if( swiperWrapper.length > 0 ){
         },
     })
 
-
     const heroSwiper = new Swiper('.hero-swiper', {
         effect: "fade",
         slidesPerView: 1,
@@ -219,4 +234,89 @@ if( swiperWrapper.length > 0 ){
         },
     })
 
+}
+
+
+
+// editor de texto personalizado
+const textEditor = document.querySelectorAll('.textEditor')
+
+if(textEditor ){
+    textEditor.forEach(editor => {
+        // Dentro de cada editor, pegar os botões e a área de texto
+        const txEd_output  = editor.querySelector('.textEditor-input')
+        const txEd_buttons = editor.querySelector('.textEditor-menu').querySelectorAll('button')
+        const txEd_hidden  = editor.querySelector('input[type="hidden"]')
+        
+        txEd_buttons.forEach(btn => {
+            btn.addEventListener('click', (b) => {
+                b.preventDefault()
+
+                const button = b.currentTarget
+                const cmd    = button.dataset.command
+
+                // Executar o comando correspondente
+                document.execCommand(cmd, false, null)
+            })
+        })
+
+        // atualiza input:hidden com o conteudo do editor
+        txEd_output.addEventListener('focusout', () => {
+            console.log('saiu!!')
+
+            txEd_hidden.value = txEd_output.innerHTML
+        })
+    })
+}
+
+
+// atualiza o preview no upload de imagem
+const imgUploads = document.querySelectorAll('.input-img')
+
+if( imgUploads ){
+    imgUploads.forEach(upImg => {
+        const fileInput  = upImg.querySelector('.input-img-thumb')
+        const imgPreview = upImg.querySelector('.input-img img')
+        
+        // Quando um arquivo de imagem é selecionado
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0]
+
+            if( file && file.type.startsWith('image/') ) {
+                // Criar um URL para a imagem
+                const reader = new FileReader()
+                
+                reader.onload = function(e) {
+                    // Atualizar o src da imagem com o resultado da leitura
+                    imgPreview.src = e.target.result;
+                    upImg.classList.add('up')
+                    
+                }
+
+                reader.readAsDataURL( file )
+            }
+        })
+    })
+}
+
+
+// remove imagem cadastrada
+const btns_remove_img = document.querySelectorAll('.img-remover')
+
+if( btns_remove_img ){
+    btns_remove_img.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+    
+            const target = e.currentTarget
+            const myImg  = target.parentElement.querySelector('img')
+            const parent = target.closest('.input-img')
+            
+            if(myImg){
+                // myImg.remove()
+                myImg.removeAttribute('src')
+                parent.classList.remove('up')
+            }
+        })
+    })
 }

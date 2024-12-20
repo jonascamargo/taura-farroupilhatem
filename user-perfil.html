@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- JS -->
-    <!-- <script src="./assets/js/main-script.js" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="./assets/js/main-script.js" defer></script>
 </head>
 
 
@@ -74,11 +75,12 @@
                         <fieldset class="input-img up">
                             <p>Foto</p>
 
-                            <label for="user-config-avatar">
+                            <label for="servico-img-thumb">
+                                <button class="img-remover"><i class="fa-solid fa-circle-xmark"></i></button>
                                 <img src="./upload/home-sobre-img01.png" alt="Avatar do usuário">
                             </label>
 
-                            <input type="file" name="user-config-avatar" id="user-config-avatar">
+                            <input type="file" class="input-img-thumb" name="user-config-avatar" id="user-config-avatar">
                         </fieldset>
                     </div>
 
@@ -117,8 +119,8 @@
                         </fieldset>
 
                         <div class="action-box">
+                            <button class="btn-sm-gray" data-modal="excluir-perfil">Excluir Perfil</button>
                             <a href="" class="btn-sm-blue">Salvar</a>
-                            <a href="" class="btn-sm-gray">Excluir Perfil</a>
                         </div>
 
                     </div>
@@ -129,7 +131,7 @@
                 <div class="flex justify-between items-center p-8 border-t-2">
                     <p class="text-base font-semibold pr-6">Deseja se tornar colaborador e oferecer seus serviços no site?</p>
                     
-                    <a href="" class="btn-sm-blue">Solicitar</a>
+                    <a href="" class="btn-sm-blue" data-modal="parceiro-perfil">Solicitar</a>
                 </div>
 
                 <!-- remover esta estrutura quando o usuario for aprovado -->
@@ -142,6 +144,33 @@
         </section>
 
     </main>
+
+    
+    <!-- MODAL -->
+    <div class="modal-stage">
+        
+        <!-- confirmar para excluir perfil -->
+        <div class="modal bg-white p-5" id="excluir-perfil">
+
+            <p class="title-sm mb-10">Realmente deseja excluir seu perfil?</p>
+
+            <div class="flex justify-end gap-5 w-full">
+                <button class="btn-sm-blue modal-close">Não</button>
+                <a href="" class="btn-sm-gray">Sim</a>
+            </div>
+
+        </div>
+
+        <!-- alerta de solicitaçao para parceiro -->
+        <div class="modal bg-white p-5" id="parceiro-perfil">
+            <p class="title-sm w-full">Solicitação feita com sucesso!</p>
+            <p class="text-lg">Logo será notificado com a confirmação</p>
+        </div>
+
+
+        <span class="curtain"></span>
+        <i class="fa-solid fa-circle-xmark modalCloser"></i>
+    </div>
     
 </body>
 </html>

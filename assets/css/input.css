@@ -126,8 +126,12 @@ body {
 .btn-lg-blue {
     @apply btn-base btn-lg btn-blue;
 }
+
 .btn-sm-gray {
     @apply btn-base btn-sm btn-gray;
+}
+.btn-md-gray {
+    @apply btn-base btn-md btn-gray;
 }
 
 .btn-sm-blue-b {
@@ -935,14 +939,14 @@ body {
 }
 
 .blog-post-item .img {
-    @apply inline-block w-full mb-5;
+    @apply inline-block w-full;
 }
 .blog-post-item .img img {
     @apply w-full;
 }
 
 .blog-post-item .box {
-    @apply p-4 sm:p-8 pt-0;
+    @apply p-4 sm:p-8 pt-2 sm:pt-2;
 }
 
 .blog-post-item .info {
@@ -1200,8 +1204,19 @@ body {
     border-style: solid;
 }
 
+.input-img .img-remover {
+    @apply hidden absolute right-2 top-1 z-10 bg-white text-2xl rounded-full leading-[90%];
+    @apply transition ease-in-out hover:text-red-700;
+}
+.input-img.up .img-remover {
+    @apply block;
+}
+
 .input-img label img {
-    @apply absolute left-0 top-0;
+    @apply absolute left-0 top-0 w-full h-full object-cover opacity-0;
+}
+.input-img.up label img {
+    @apply opacity-100;
 }
 
 .input-img p {
@@ -1243,8 +1258,6 @@ body {
     @apply text-3xl;
 }
 
-
-/* 105+120+120+40+20+40 */
 .chat-messages {
     @apply min-h-56 h-[calc(100vh-500px)] px-5 overflow-y-auto;
 }
@@ -1263,4 +1276,42 @@ body {
 .chat-received > p:not(:last-child),
 .chat-send  > p:not(:last-child) {
     @apply mb-4;
+}
+
+
+/* editor de texto */
+.textEditor {
+    @apply border-2 rounded-lg;
+}
+
+.textEditor-menu {
+    @apply flex gap-2 p-2 border-b-2;
+}
+.textEditor-menu > div {
+    @apply flex;
+}
+
+.textEditor-menu button {
+    @apply bg-gray-100 py-2 px-3;
+    @apply transition ease-in-out hover:bg-ftem_b1 hover:text-white;
+}
+.textEditor-menu button:first-child {
+    @apply rounded-l-md;
+}
+.textEditor-menu button:last-child {
+    @apply rounded-r-md;
+}
+
+.textEditor .textEditor-input {
+    @apply min-h-[160px] max-h-[580px] p-4 outline-none overflow-y-auto resize-y;
+}
+
+.textEditor .textEditor-input ul,
+.textEditor .textEditor-input ol {
+    list-style: inherit;
+    padding: 0 0 0 15px;
+    margin: 0 inherit;
+}
+.textEditor .textEditor-input ol {
+    list-style: decimal;
 }
