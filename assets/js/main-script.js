@@ -126,8 +126,11 @@ if( modalStage ){
     })
 
     // --- botao pra fechar modal
-    document.querySelector('.modalCloser').addEventListener('click', () => { modalClose() })
-    document.querySelector('.modal-close').addEventListener('click', () => { modalClose() })
+    let btn_modaClose1 = document.querySelector('.modalCloser')
+    if( btn_modaClose1 ) { btn_modaClose1.addEventListener('click', () => { modalClose() }) }
+    
+    let btn_modaClose2 = document.querySelector('.modal-close')
+    if( btn_modaClose2 ) { btn_modaClose2.addEventListener('click', () => { modalClose() }) }
 
     // --- ESC para fechar modal
     document.addEventListener('keydown', function(event) {
